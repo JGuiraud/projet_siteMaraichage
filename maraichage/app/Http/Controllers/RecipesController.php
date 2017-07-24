@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Recipe;
+
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class RecipesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view ('adminpanel');
+        //
     }
 
     /**
@@ -79,6 +81,23 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return Redirect('/recettes');
+        // $recipes = Recipe::All();
+        // return view('listRecipes', compact('recipes'));
+        // $this->getRecipes($request);
+        // return view('listRecipes');
+        // getRecipes();
+    }
+
+    public function getRecipes(Request $request)
+    {
+        $recipes = Recipe::All();
+        // dd($recipes);
+        // $allRecipes = [];
+        // foreach ($recipes as $recipe) {
+        //     $allRecipes = $recipe['attributes'];
+        // }
+        // dd($allRecipes);
+        return view('listRecipes', compact('recipes'));
     }
 }
