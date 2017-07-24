@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class VegetableSeasonsTableSeeder extends Seeder
+class SeasonVegetableTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,43 +11,43 @@ class VegetableSeasonsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('vegetable_seasons')->insert([
+        DB::table('season_vegetable')->insert([
             'vegetable_id' => '1',
             'season_id' => '2',
         ]);
-        DB::table('vegetable_seasons')->insert([
+        DB::table('season_vegetable')->insert([
             'vegetable_id' => '2',
             'season_id' => '1',
         ]);
-        DB::table('vegetable_seasons')->insert([
+        DB::table('season_vegetable')->insert([
             'vegetable_id' => '2',
             'season_id' => '2',
         ]);
-        DB::table('vegetable_seasons')->insert([
+        DB::table('season_vegetable')->insert([
             'vegetable_id' => '2',
             'season_id' => '3',
         ]);
-        DB::table('vegetable_seasons')->insert([
+        DB::table('season_vegetable')->insert([
             'vegetable_id' => '2',
             'season_id' => '4',
         ]);
-        DB::table('vegetable_seasons')->insert([
+        DB::table('season_vegetable')->insert([
             'vegetable_id' => '3',
             'season_id' => '1',
         ]);
-        DB::table('vegetable_seasons')->insert([
+        DB::table('season_vegetable')->insert([
             'vegetable_id' => '3',
             'season_id' => '2',
         ]);
-        DB::table('vegetable_seasons')->insert([
+        DB::table('season_vegetable')->insert([
             'vegetable_id' => '3',
             'season_id' => '3',
         ]);
-        DB::table('vegetable_seasons')->insert([
+        DB::table('season_vegetable')->insert([
             'vegetable_id' => '4',
             'season_id' => '3',
         ]);
-        DB::table('vegetable_seasons')->insert([
+        DB::table('season_vegetable')->insert([
             'vegetable_id' => '4',
             'season_id' => '4',
         ]);
