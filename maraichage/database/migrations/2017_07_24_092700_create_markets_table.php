@@ -15,6 +15,7 @@ class CreateMarketsTable extends Migration
     {
         Schema::create('markets', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('city');
             $table->string('latitude');
             $table->string('longitude');
             $table->string('details');
