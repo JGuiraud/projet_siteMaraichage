@@ -89,6 +89,34 @@ class RecipesController extends Controller
         // getRecipes();
     }
 
+    public function details($id)
+    {
+        $recipe = Recipe::All()->where("id", "=", $id)->first();
+        $vegies = json_decode($recipe->vegetables_names);
+        $vegies_quantities = json_decode($recipe->vegetables_quantity);
+        $ingredients = json_decode($recipe->ingredients);
+        $ingredients_quantities = json_decode($recipe->ingredients_quantity);
+        $recipe_text = html_entity_decode($recipe->recipe_text);
+
+        return view('detailRecipe',
+        ['recipe'=>$recipe,
+        'vegies'=>$vegies,
+        'vegies_quantities'=>$vegies_quantities,
+        'ingredients'=>$ingredients,
+        'ingredients_quantities'=>$ingredients_quantities,
+        'recipe_text'=>$recipe_text,
+        ]);
+    }
+
+    public function newRecipePart1()
+    {
+        return view('newRecipePart1');
+    }
+    public function newRecipePart2()
+    {
+        return view('newRecipePart2');
+    }
+
     public function getRecipes(Request $request)
     {
         $recipes = Recipe::All();

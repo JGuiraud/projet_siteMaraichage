@@ -2,10 +2,26 @@
     width: 5%;
 }
 
+.deleteRecipe:hover {
+    cursor: pointer;
+}
+
+.detailRecette::after {
+    font-weight: bold;
+}
+
 #detailsCol {
     width: 5%;
 }
 
 .fa-times {
     color: red;
+}
+
+.panel-footer {
+    text-align: right;
+}
+
+.fa-question-circle:hover {
+    cursor: help;
 }
