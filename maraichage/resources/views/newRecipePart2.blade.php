@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-        <a href="/recettes" class="btn btn-primary">Annuler et retour</a>
+        <a href="/recettes" class="btn btn-danger">Annuler et retour</a>
         <br>
         <br>
             <div class="panel panel-default">
@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="title">Saison</label>
+                            <label class="control-label col-sm-2" for="title">Saison(s)</label>
                             <div class="col-xs-offset-1">
                                 <label class="checkbox-inline">
                                     <input type="checkbox" id="inlineCheckbox1" value="sp"> Printemps
@@ -62,7 +62,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="title"><i class="fa fa-question-circle" aria-hidden="true" title="Le cas échéant, veuillez ajouter à la recette les ingrédients supplémentaires."></i> Ingrédients supplémentaire</label>
+                            <label class="control-label col-sm-2" for="title"><i class="fa fa-question-circle" aria-hidden="true" title="Le cas échéant, veuillez ajouter à la recette des ingrédients supplémentaires."></i> Ingrédients supplémentaire</label>
                             <div class="form-group col-sm-10">
                                 {{-- <div class="col-sm-6">
                                     <label class="control-label">Tomates</label><input class="form-control col-sm-3" type="text" placeholder='quantité' >

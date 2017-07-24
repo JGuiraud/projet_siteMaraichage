@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-        <a href="/recettes" class="btn btn-primary">Annuler et retour</a>
+        <a href="/recettes" class="btn btn-danger">Annuler et retour</a>
         <br>
         <br>
             <div class="panel panel-default">
