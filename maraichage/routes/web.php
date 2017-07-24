@@ -22,4 +22,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@index')->name('admin');
 
 // Vegetables:
-Route::get('/legumes', 'VegetableController@showcreatedelete');
+Route::get('/legumes', 'VegetableController@show');
+Route::get('/legumes/delete/{id}', 'VegetableController@destroy');
+Route::post('/legumes/create', 'VegetableController@create');
