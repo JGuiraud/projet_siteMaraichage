@@ -35,6 +35,7 @@
                         <tr>
                             <th id="supprimerCol">Sup.</th>
                             <th id="detailsCol">Détails</th>
+                            <th id="id">id</th>
                             <th>Titre</th>
                         </tr>
                         </thead>
@@ -42,16 +43,10 @@
                     @foreach ($recipes as $recipe)
                         <tr>
                             <td style="text-align:center;"><i href="/supprimer/recette/{{ $recipe->id }}" class="fa fa-times deleteRecipe" aria-hidden="true"></i></td>
-                             <td style="text-align:center;"><a href="/details/recette/{{ $recipe->id }}"><i class="fa fa-info detailsRecipe" aria-hidden="true"></i></a></td>
-                            {{-- <td style="text-align:center;"><i class="fa fa-info detailsRecipe" aria-hidden="true"></i></td> --}}
-
+                             <td style="text-align:center;"><a href="/details/recette/{{ $recipe->id }}"><i class="fa fa-info-circle detailsRecipe" aria-hidden="true"></i></a></td>
+                             <td id="idList">{{$recipe->id}}</td>
                             <td>{{$recipe->title}}</td>
                         </tr>
-
-
- {{-- <td style="text-align:center;"><a href="/supprimer/recette/{{ $recette->id }}" target="_blank"><i class="fa fa-info-cross" aria-hidden="true"></i></a></td>
-                            <td style="text-align:center;"><a href="/details/recette/{{ $recette->id }}" target="_blank"><i class="fa fa-info-cross" aria-hidden="true"></i></a></td> --}}
-
                     @endforeach
                         </tbody>
                     </table>
@@ -61,4 +56,7 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
 @endsection

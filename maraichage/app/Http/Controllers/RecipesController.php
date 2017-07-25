@@ -23,8 +23,48 @@ class RecipesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+
+
+
+        $nbIngredients = intval($request->input('nbIngredients'));
+        $nbExtraingredients = intval($request->input('nbExtraingredients'));
+        $ingredients = [];
+        $quantity = [];
+        for ($i=1; $i<=$nbIngredients; $i++) {
+            $ingredients[] = $request->input('ingredient'.$i);
+            $quantity[] = $request->input('quantity'.$i);
+        }
+        $extraIngredients = [];
+        $extraQuantity = [];
+        for ($y=1; $y<=$nbExtraingredients; $y++) {
+            if ($request->input('extraIngredient'.$y)) {
+                $extraIngredients[] = $request->input('extraIngredient'.$y);
+                if (!$request->input('extraQuantity'.$y)) {
+                    $extraQuantity[] = 'N/A';
+                } else {
+                    $extraQuantity[] = $request->input('extraQuantity'.$y);
+                }
+            }
+        }
+        $descriptionRecipe = $request->input('description');
+        $output = preg_replace("/\r\n|\r|\n/", '<br/>', $descriptionRecipe);
+
+        $newRecipe = new Recipe;
+        $newRecipe->title = $request->input('title');
+        $newRecipe->vegetables_names = json_encode($ingredients);
+        $newRecipe->vegetables_quantity = json_encode($quantity);
+        $newRecipe->ingredients = json_encode($extraIngredients);
+        $newRecipe->ingredients_quantity = json_encode($extraQuantity);
+        $newRecipe->recipe_text = $output;
+
+        // dd($newRecipe);
+        $newRecipe->save();
+        return Redirect('/recettes');
+
+        // dd($ingredients, $quantity, $extraIngredients, $extraQuantity, $output);
+        // $newRecipe->title = $request->input('title');
         //
     }
 
@@ -81,12 +121,9 @@ class RecipesController extends Controller
      */
     public function destroy($id)
     {
+        $recipe = Recipe::all()->where('id', '=', $id)->first();
+        $recipe->delete();
         return Redirect('/recettes');
-        // $recipes = Recipe::All();
-        // return view('listRecipes', compact('recipes'));
-        // $this->getRecipes($request);
-        // return view('listRecipes');
-        // getRecipes();
     }
 
     public function details($id)

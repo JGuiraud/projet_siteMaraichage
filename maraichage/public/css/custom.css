@@ -14,6 +14,10 @@
     width: 5%;
 }
 
+#idList {
+    width: 5%;
+}
+
 .fa-times {
     color: red;
 }
@@ -24,4 +28,12 @@
 
 .fa-question-circle:hover {
     cursor: help;
+}
+
+.remove_field {
+    text-align: center;
+}
+
+.warning {
+    background-color: rgba(255, 0, 0, .2);
 }
