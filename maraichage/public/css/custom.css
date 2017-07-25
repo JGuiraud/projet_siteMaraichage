@@ -8,9 +8,9 @@
 }
 
 #map {
-    height: 10%;
-    width: 10%;
-    position: relative;
+    height: 80vh;
+    /* width: 10%; */
+    /* position: relative; */
 }
 
 .leaflet-control-zoom.leaflet-bar.leaflet-control {

@@ -93,7 +93,7 @@ class MarketsController extends Controller
     public function createMarket(Request $request)
     {
         $form = new Market;
-        $form->city=$request->input('city');
+        $form->city=$request->input('city_bdd');
         $form->latitude=$request->input('latitude');
         $form->longitude=$request->input('longitude');
         $form->details=$request->input('details');
