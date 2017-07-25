@@ -23,7 +23,11 @@
 }
 
 .panel-footer {
-    text-align: right;
+    text-align: center;
+}
+
+.retour {
+    text-align: center;
 }
 
 .fa-question-circle:hover {

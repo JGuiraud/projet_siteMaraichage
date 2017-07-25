@@ -11,7 +11,7 @@
                     Pour ajouter une nouvelle recette, cliquez sur le bouton suivant
                     <br>
                     <br>
-                    <a class="btn btn-success"href="/nouvelle/recette/part1">Ajouter une recette</a>
+                    <a class="btn btn-success"href="/nouvelle/recette/part1"><i class="fa fa-plus" aria-hidden="true"></i> Ajouter une recette</a>
 
                 </div>
 

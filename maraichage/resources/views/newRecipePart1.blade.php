@@ -5,8 +5,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-        <a href="/recettes" class="btn btn-danger">Annuler et retour</a>
-        <br>
+        <div class="retour">
+            <a href="/recettes" class="btn btn-danger">Annuler et retour</a>
+        </div>
         <br>
             <div class="panel panel-default">
                 <div class="panel-heading">Créer une nouvelle recette</div>
@@ -35,7 +36,8 @@
 
                 </div>
                 <div class="panel-footer">
-                    <a href="/nouvelle/recette/part2" class="btn btn-success">Étape suivante</a>
+                    <a href="/nouvelle/recette/part2" class="btn btn-success">Étape suivante <i class="fa fa-arrow-right" aria-hidden="true"></i>
+</a>
                 </div>
             </div>
         </div>

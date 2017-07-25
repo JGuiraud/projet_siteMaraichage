@@ -5,8 +5,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-        <a href="/recettes" class="btn btn-danger">Annuler et retour</a>
-        <br>
+        <div class="retour">
+            <a href="/recettes" class="btn btn-danger">Annuler et retour</a>
+        </div>
+
         <br>
             <div class="panel panel-default">
 
@@ -82,7 +84,9 @@ Raptim igitur properantes ut motus sui rumores celeritate nimia praevenirent, vi
                 </div>
 
                 <div class="panel-footer">
-                    <button type="submit" id="submitRecipe"class="btn btn-success">Ajouter la recette</button>
+                    <button type="submit" id="submitRecipe"class="btn btn-success">
+                    <i class="fa fa-plus" aria-hidden="true"></i>  Ajouter la recette</button>
+
                 </div>
 
             </div>
