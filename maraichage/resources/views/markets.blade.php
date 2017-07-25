@@ -11,7 +11,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Ajouter un marché</div>
                 <div class="panel-body">
-                    <!-- <form class="form-horizontal" method="POST" action="{{ route('createMarket') }}"> -->
+                          <!-- <form class="form-horizontal" id="form" method="POST" action="{{ route('createMarket') }}">       -->
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="title">Ville</label>
@@ -20,22 +20,12 @@
                             </div>
                             <br>
                             <br>
-                            <!-- <label class="control-label col-sm-2" for="title">Latitude</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="latitude" name="latitude" placeholder="43.1166700" required>
-                            </div>
-                            <br>
-                            <br>
-                            <label class="control-label col-sm-2" for="title">Longitude</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="longitude" name="longitude" placeholder="0.7333300" required>
-                            </div>
-                            <br>
-                            <br>
                             <label class="control-label col-sm-2" for="title">Commentaires</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="details" name="details" placeholder="jour, horaire, details" required>
-                            </div> -->
+                            </div> 
+                            <input type="text" id="latitude" name="latitude" value="" >
+                            <input type="text" id="longitude" name="longitude" value="" > 
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
