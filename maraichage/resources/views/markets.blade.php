@@ -44,39 +44,34 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Liste des marchés</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('destroyMarket') }}">
-                        {{ csrf_field() }}
-                        <div class="form-group">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Supprimer</th>
-                                        <th>N°</th>
-                                        <th>Ville</th>
-                                        <th>Latitude</th>
-                                        <th>Longitude</th>
-                                        <th>Commentaires</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($markets as $market)
-                                    <tr>
-                                        <td>
-                                            <button type="submit" class="btn btn-default btn-xs">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Supprimer</th>
+                                <th>N°</th>
+                                <th>Ville</th>
+                                <th>Latitude</th>
+                                <th>Longitude</th>
+                                <th>Commentaires</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($markets as $market)
+                            <tr>
+                                <td>
+                                    <a class="btn btn-default btn-xs" href="/supprimer/marche/{{ $market->id }}">
                                         <span class="glyphicon glyphicon-remove"></span>
-                                    </button>
-                                        </td>
-                                        <td>{{ $market->id }}</td>
-                                        <td>{{ $market->city }}</td>
-                                        <td>{{ $market->latitude }}</td>
-                                        <td>{{ $market->longitude }}</td>
-                                        <td>{{ $market->details }}</td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </form>
+                                    </a>
+                                </td>
+                                <td>{{ $market->id }}</td>
+                                <td>{{ $market->city }}</td>
+                                <td>{{ $market->latitude }}</td>
+                                <td>{{ $market->longitude }}</td>
+                                <td>{{ $market->details }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="panel panel-default">

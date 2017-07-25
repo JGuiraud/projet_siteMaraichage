@@ -13,7 +13,7 @@
 */
 
 Route::get('/', function () {
-	return view('welcome');
+    return view('welcome');
 }
 );
 
@@ -24,6 +24,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@index')->name('admin');
 
 Route::get('/marches', 'MarketsController@getMarket');
-Route::delete('/supprimer/marche/', 'MarketsController@destroyMarket')->name('destroyMarket');
+Route::get('/supprimer/marche/{id}', 'MarketsController@destroyMarket');
 Route::post('/nouveau/marche/', 'MarketsController@createMarket')->name('createMarket');
-
