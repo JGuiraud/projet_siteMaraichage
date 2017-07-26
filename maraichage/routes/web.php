@@ -28,3 +28,11 @@ Route::get('/details/recette/{id}', 'RecipesController@details');
 Route::get('/nouvelle/recette/part1', 'RecipesController@newRecipePart1');
 Route::get('/nouvelle/recette/part2', 'RecipesController@newRecipePart2');
 Route::post('/nouvelle/recette/part3', 'RecipesController@create')->name('createRecipe');
+
+// Vegetables:
+Route::get('/legumes', 'VegetableController@show');
+Route::get('/legumes/suppr/{id}', 'VegetableController@destroy');
+Route::post('/legumes/create', 'VegetableController@create');
+
+// Basket
+Route::get('/selectionPanier', 'VegetableController@selectBasket');

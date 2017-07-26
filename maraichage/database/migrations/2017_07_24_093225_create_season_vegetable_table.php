@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVegetableSeasonsTable extends Migration
+class CreateSeasonVegetableTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateVegetableSeasonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('vegetable_seasons', function (Blueprint $table) {
+        Schema::create('season_vegetable', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('vegetable_id');
             $table->integer('season_id');
@@ -28,6 +28,6 @@ class CreateVegetableSeasonsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vegetable_seasons');
+        Schema::dropIfExists('season_vegetable');
     }
 }
