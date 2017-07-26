@@ -7,6 +7,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+                    <div class="retour">
+                <a href="/admin" class="btn btn-danger"><i class="fa fa-backward" aria-hidden="true"></i>
+                Retour Menu</a>
+            </div>
             <h3>Mes marchés</h3>
             <div class="panel panel-default">
                 <div class="panel-heading">Ajouter un marché</div>
@@ -42,7 +46,7 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Supprimer</th>
+                                <th id="supprimerCol">Sup.</th>
                                 <!-- <th>N°</th> -->
                                 <th>Ville</th>
                                 <!-- <th>Latitude</th>
@@ -55,7 +59,7 @@
                             <tr>
                                 <td>
                                     <a class="btn btn-default btn-xs" href="/supprimer/marche/{{ $market->id }}">
-                                        <span class="glyphicon glyphicon-remove"></span>
+                                        <span class="fa fa-times"></span>
                                     </a>
                                 </td>
                                 <!-- <td>{{ $market->id }}</td> -->
@@ -70,7 +74,7 @@
                 </div>
             </div>
             <div class="panel panel-default">
-                <div class="panel-heading">Map en ligne</div>
+                <div class="panel-heading">Visuel de la carte</div>
                 <div class="panel-body">
                     <div id="map">
                     </div>

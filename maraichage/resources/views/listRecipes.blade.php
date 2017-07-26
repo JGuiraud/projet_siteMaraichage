@@ -5,14 +5,22 @@
 <div class="container">
 <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            <div class="retour">
+                <a href="/admin" class="btn btn-danger"><i class="fa fa-backward" aria-hidden="true"></i>
+                Retour Menu</a>
+            </div>
+			<h3>Mes recettes</h3>
 
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    Ajouter une recette
+                </div>
+                <div class="panel-heading">
                     Pour ajouter une nouvelle recette, cliquez sur le bouton suivant
                     <br>
-                    <br>
-                    <a class="btn btn-success"href="/nouvelle/recette/part1"><i class="fa fa-plus" aria-hidden="true"></i> Ajouter une recette</a>
-
+                </div>
+                <div class="panel-footer">
+                                    <a class="btn btn-success"href="/nouvelle/recette/part1"><i class="fa fa-plus" aria-hidden="true"></i> Ajouter une recette</a>
                 </div>
 
             </div>
@@ -24,7 +32,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Liste des recettes</div>
+                <div class="panel-heading">Gérer les recettes présentes</div>
 
                 <div class="panel-body">
 

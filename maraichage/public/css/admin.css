@@ -28,10 +28,16 @@
     height: 80vh;
     border: none;
     background: none;
+    box-shadow: none;
 }
+
 .panel-body {
     padding: 0;
     border: 0;
+}
+
+.eye {
+    color: #455a64;
 }
 
 .action{

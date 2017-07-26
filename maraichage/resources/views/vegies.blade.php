@@ -4,6 +4,12 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
+		            <div class="retour">
+                <a href="/admin" class="btn btn-danger"><i class="fa fa-backward" aria-hidden="true"></i>
+                Retour Menu</a>
+            </div>
+			<h3>Mes légumes</h3>
+
 			<div class="panel panel-default">
 				<div class="panel-heading">Ajouter un Légume</div>
 				<div class="panel-body">
@@ -36,7 +42,7 @@
 					</form>
 				</div>
 				<div class="panel-footer">
-					<button id="subm" class="btn btn-success" type="submit">Ajouter légume a la base</button>
+					<button id="subm" class="btn btn-success" type="submit"> <i class="fa fa-plus" aria-hidden="true"></i> Ajouter légume a la base</button>
 				</div>
 			</div>
 		</div>
@@ -48,7 +54,7 @@
 				<div class="panel-body">
 					<table class="table table-striped">
 						<tr>
-							<td>-</td>
+							<td id="supprimerCol">Sup.</td>
 							<td>Nom</td>
 							<td>Pri</td>
 							<td>Eté</td>
@@ -57,7 +63,7 @@
 						</tr>
 						@foreach($vegies as $key => $vegie)
 						<tr>
-							<td><a href="/legumes/suppr/{{ $vegie->id }}">suppr</a></td>
+							<td><i class="fa fa-times deleteVegie" href="/legumes/suppr/{{ $vegie->id }}" name="{{ $vegie->name }}"></i></td>
 							<td>{{ $vegie->name }}</td>
 							<td>
 								@if($vegiesSeasons[$key][0])
@@ -99,9 +105,18 @@
 @endsection
 
 @section('js')
-<script>
-	$('#subm').on('click', function(){
-		$('#vegieForm').submit()
-	})
-</script>
+
+    <script src="{{ asset('js/vegies.js') }}"></script>
+
+
+@endsection
+
+@section('css')
+<style>
+i:hover {
+	cursor: pointer;
+}
+
+</style>
+
 @endsection

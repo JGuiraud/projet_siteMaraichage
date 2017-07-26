@@ -9,25 +9,28 @@
         <div class="containerAdmin">
             <div class="panel panel-default">
                 <div class="panel-body adminpanel">
-                    <div class="action">
+                    <a href="/legumes" class="action">
                         <div class="facontainer"><i class="fa fa-leaf fa-2x" aria-hidden="true"></i>
                         </div>
                         <div class="textmenu"><span>MES LÉGUMES</span></div>
-                    </div>
+                    </a>
                     <a href="/recettes" class="action">
                         <div class="facontainer"><i class="fa fa-book fa-2x" aria-hidden="true"></i></div>
                         <div class="textmenu"><span>MES RECETTES</span></div>
                     </a>
-                    <div class="action">
+                    <a href="/selectionPanier" class="action">
                         <div class="facontainer"><i class="fa fa-shopping-basket fa-2x" aria-hidden="true"></i>
                         </div>
                         <div class="textmenu"><span>PANIER & RECETTE</span></div>
-                    </div>
-                    <div class="action">
+                    </a>
+                    <a href="/marches" class="action">
                         <div class="facontainer"><i class="fa fa-map fa-2x" aria-hidden="true"></i>
                         </div>
                         <div class="textmenu"><span>MES MARCHÉS</span></div>
-                    </div>
+                    </a>
+                    <a href="/" target="_blank" class="">
+                        <i class="fa fa-eye fa-5x eye" aria-hidden="true"></i>
+                    </a>
                 </div>
 
             </div>

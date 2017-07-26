@@ -4,6 +4,12 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
+		    <div class="retour">
+                <a href="/admin" class="btn btn-danger"><i class="fa fa-backward" aria-hidden="true"></i>
+                Retour Menu</a>
+        	</div>
+			<h3>Panier & Recette</h3>
+
 			<div class="panel panel-default">
 				<div class="panel-heading">Recherche</div>
 				<div class="panel-body">
