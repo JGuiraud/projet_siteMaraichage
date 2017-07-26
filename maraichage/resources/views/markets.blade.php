@@ -83,6 +83,7 @@
 @section('js')
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7EtFbAhBZWZMCI_9OaOpLNPkjVRcKlGU&libraries=places&callback=initAutocomplete" async defer></script>
     <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"></script>
+    <script src="{{ asset('js/form.js') }}"></script>
     <script src="{{ asset('js/map.js') }}"></script>
 
 @endsection
