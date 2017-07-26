@@ -71,6 +71,7 @@ class Handler extends ExceptionHandler
             $exception->getHeaders()
         );
     }
+
     /**
      * Convert an authentication exception into an unauthenticated response.
      *
