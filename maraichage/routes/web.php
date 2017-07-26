@@ -23,5 +23,8 @@ Route::get('/admin', 'AdminController@index')->name('admin');
 
 // Vegetables:
 Route::get('/legumes', 'VegetableController@show');
-Route::get('/legumes/delete/{id}', 'VegetableController@destroy');
+Route::get('/legumes/suppr/{id}', 'VegetableController@destroy');
 Route::post('/legumes/create', 'VegetableController@create');
+
+// Basket
+Route::get('/selectionPanier', 'VegetableController@selectBasket');

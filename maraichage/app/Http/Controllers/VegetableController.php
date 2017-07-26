@@ -15,6 +15,34 @@ class VegetableController extends Controller
      */
     public function show()
     {
+        $vegies = Vegetable::all();
+        $vegiesSeasons = [];
+        $seasonsTable = ['sp', 'su', 'au', 'wi'];   
+        foreach ($vegies as $key => $vegie) {
+            $j=0;
+            for($i = 0; $i < count($seasonsTable); $i++){
+                if(count($vegie->seasons)>$j){  
+                    if($seasonsTable[$i] !== $vegie->seasons[$j]->slug){
+                        $vegiesSeasons[$key][$i]=0;
+                    }else{
+                        $vegiesSeasons[$key][$i]=1;
+                        $j++;
+                    }
+                }else{
+                    $vegiesSeasons[$key][$i]=0;
+                }
+            }
+        }
+        return view('vegies', compact('vegies', 'vegiesSeasons'));
+    }
+    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function selectBasket()
+    {
     	$vegies = Vegetable::all();
     	$vegiesSeasons = [];
     	$seasonsTable = ['sp', 'su', 'au', 'wi'];	
@@ -23,17 +51,17 @@ class VegetableController extends Controller
     		for($i = 0; $i < count($seasonsTable); $i++){
     			if(count($vegie->seasons)>$j){	
     				if($seasonsTable[$i] !== $vegie->seasons[$j]->slug){
-    					$vegiesSeasons[$key][$i]='-';
+    					$vegiesSeasons[$key][$i]=0;
     				}else{
-    					$vegiesSeasons[$key][$i]='X';
+    					$vegiesSeasons[$key][$i]=1;
     					$j++;
     				}
     			}else{
-    				$vegiesSeasons[$key][$i]='-';
+    				$vegiesSeasons[$key][$i]=0;
     			}
     		}
     	}
-    	return view('vegies', compact('vegies', 'vegiesSeasons'));
+    	return view('basket', compact('vegies', 'vegiesSeasons'));
     }
 
     /**
