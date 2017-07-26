@@ -46,19 +46,15 @@
 
                     </div>
                 <div class="panel-footer no-print">
-                    <a id='print' class="btn btn-info no-print"><i class="fa fa-print" aria-hidden="true"></i> Imprimer</a>
-                    <a id='print' class="btn btn-info no-print" title="Cette recette prendra la place de la précédente en vitrine"><i class="fa fa-eye" aria-hidden="true"></i> En vitrine</a>
+                    <a id='print' class="btn btn-primary no-print"><i class="fa fa-print" aria-hidden="true"></i> Imprimer</a>
+                    <a id='print' class="btn btn-primary no-print" title="Cette recette prendra la place de la précédente en vitrine"><i class="fa fa-eye" aria-hidden="true"></i> En vitrine</a>
                 </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
 @endsection
-
-
 
 @section('js')
 <script>
