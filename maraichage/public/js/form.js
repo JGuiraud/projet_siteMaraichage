@@ -1,3 +1,4 @@
+//Autocompletion
 var autocomplete;
 
 function initAutocomplete() {
@@ -11,8 +12,9 @@ function initAutocomplete() {
     initMap(); //map.js
 }
 
+//condition enable submit button
 $('.btn').prop('disabled', true);
-$('body').mousemove(function() {
+$('body').keyup(function() {
     var city = $('#city').val();
     var details = $('#details').val();
     if (city != '' && details != '') {
@@ -22,11 +24,26 @@ $('body').mousemove(function() {
     }
 });
 
+//condition control existing market
+$('body').click(function() {
+    $('.market_city').each(function() {
+        if ($(this).text() == $('#city_bdd').val()) {
+            alert('Ce marché existe déjà dans la liste ');
+            $("#city_bdd").val(' ').html();
+            $("#city").val('').html();
+
+        };
+    });
+});
+
+//find only city string and call api geocode
 $('#details').focusin(function() {
-    var city = $('#city').val().split(' ')[0].replace(',', '');
+    var city = $('#city').val().replace(/\d+/g, '').replace(' ', '').split(',')[0].replace(',', '');
+    if (city.includes(' ')) {
+        city = city.split(' ')[0];
+    }
     if (city !== '') {
         $("#city_bdd").val(city).html();
-
         $.ajax({
             type: "GET",
             url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + city + "&lang=fr&key=AIzaSyD7EtFbAhBZWZMCI_9OaOpLNPkjVRcKlGU",
@@ -39,6 +56,7 @@ $('#details').focusin(function() {
     }
 });
 
+//find city latitude and longitude
 function geolocation(data) {
     var latitude = data.results[0].geometry.location.lat;
     var longitude = data.results[0].geometry.location.lng;

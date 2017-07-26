@@ -54,12 +54,14 @@
                             @foreach ($markets as $market)
                             <tr>
                                 <td>
+                                    @if ($market->id !== 1)
                                     <a class="btn btn-default btn-xs" href="/supprimer/marche/{{ $market->id }}">
                                         <span class="glyphicon glyphicon-remove"></span>
                                     </a>
+                                    @endif
                                 </td>
                                 <!-- <td>{{ $market->id }}</td> -->
-                                <td>{{ $market->city }}</td>
+                                <td class="market_city">{{ $market->city }}</td>
                                 <!-- <td>{{ $market->latitude }}</td>
                                 <td>{{ $market->longitude }}</td> -->
                                 <td>{{ $market->details }}</td>
