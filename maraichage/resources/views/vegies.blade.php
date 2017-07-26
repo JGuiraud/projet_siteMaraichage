@@ -53,17 +53,19 @@
 				<div class="panel-heading">Gérer les légumes présents</div>
 				<div class="panel-body">
 					<table class="table table-striped">
-						<tr>
-							<td id="supprimerCol">Sup.</td>
-							<td>Nom</td>
-							<td>Pri</td>
-							<td>Eté</td>
-							<td>Aut</td>
-							<td>Hiv</td>
-						</tr>
+						<thead>
+							<tr>
+								<th id="supprimerCol">Sup.</th>
+								<th>Nom</th>
+								<th>Pri.</th>
+								<th>Eté</th>
+								<th>Aut.</th>
+								<th>Hiv.</th>
+							</tr>
+						</thead>
 						@foreach($vegies as $key => $vegie)
 						<tr>
-							<td><i class="fa fa-times deleteVegie" href="/legumes/suppr/{{ $vegie->id }}" name="{{ $vegie->name }}"></i></td>
+							<td style="text-align:center;"><i class="fa fa-times deleteVegie" href="/legumes/suppr/{{ $vegie->id }}" name="{{ $vegie->name }}"></i></td>
 							<td>{{ $vegie->name }}</td>
 							<td>
 								@if($vegiesSeasons[$key][0])

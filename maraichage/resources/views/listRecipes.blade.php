@@ -13,14 +13,14 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Ajouter une recette
+                    Ajouter une Recette
                 </div>
-                <div class="panel-heading">
+                <div class="panel-body">
                     Pour ajouter une nouvelle recette, cliquez sur le bouton suivant
                     <br>
                 </div>
                 <div class="panel-footer">
-                                    <a class="btn btn-success"href="/nouvelle/recette/part1"><i class="fa fa-plus" aria-hidden="true"></i> Ajouter une recette</a>
+                    <a class="btn btn-success"href="/nouvelle/recette/part1"><i class="fa fa-plus" aria-hidden="true"></i> Ajouter une recette</a>
                 </div>
 
             </div>

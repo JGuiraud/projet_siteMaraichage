@@ -15,7 +15,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Ajouter un marché</div>
                 <div class="panel-body">
-                           <form class="form-horizontal" id="form" method="POST" action="{{ route('createMarket') }}">
+                    <form class="form-horizontal" id="form" method="POST" action="{{ route('createMarket') }}">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="title">Ville</label>
@@ -32,12 +32,10 @@
                             <input type="text" id="latitude" name="latitude" value="" hidden>
                             <input type="text" id="longitude" name="longitude" value="" hidden>
                         </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-success">Ajouter</button>
-                            </div>
-                        </div>
                     </form>
+                </div>
+                <div class="panel-footer">
+                    <button type="submit" class="btn btn-success" id="addcity"><i class="fa fa-plus"></i> Ajouter</button>
                 </div>
             </div>
             <div class="panel panel-default">
@@ -57,8 +55,8 @@
                         <tbody>
                             @foreach ($markets as $market)
                             <tr>
-                                <td>
-                                    <a class="btn btn-default btn-xs" href="/supprimer/marche/{{ $market->id }}">
+                                <td style="text-align:center;">
+                                    <a href="/supprimer/marche/{{ $market->id }}">
                                         <span class="fa fa-times"></span>
                                     </a>
                                 </td>

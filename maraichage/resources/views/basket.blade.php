@@ -13,12 +13,12 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Recherche</div>
 				<div class="panel-body">
-					<form method="post" class="form-horizontal">
+					<form method="post" class="form-horizontal" id="formBasket">
 						{{ csrf_field() }}
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="searchVegie">Nom</label>
 							<div class="col-sm-10">
-								<input id="searchVegie" type="text" name="name" class="form-control">
+								<input id="searchVegie" type="search" name="name" class="form-control">
 							</div>
 						</div>
 						<div class="form-group">
@@ -38,9 +38,12 @@
 								</label>
 							</div>
 						</div>
-						<div id="basketReceiver"></div>
+						<span id="titleBasket">Récapitulatif du panier sélectionné :</span>
+						<div id="basketReceiver" class="borderDiv"></div>
 					</form>
-					<button class="btn btn-success">valider panier</button>
+				</div>
+				<div class="panel-footer">
+					<button class="btn btn-success" id="validateBasket"><i class="fa fa-check"></i> Valider panier</button>
 				</div>
 			</div>
 		</div>
@@ -72,86 +75,13 @@
 @endsection
 
 @section('js')
-<script>
+    <script src="{{ asset('js/basket.js') }}"></script>
 
-	if(localStorage.getItem('vegiesTabl')){
-		var vegiesTabl = JSON.parse(localStorage.getItem('vegiesTabl'));
-		vegiesTabl.forEach(function(a){
-			$('#basketReceiver').append('<span id="'+ a +'"><span>X </span>'+ a +'</span><span>, ');
-		})
-	}else{
-		var vegiesTabl = [];
-		console.log(vegiesTabl);
-		localStorage.setItem('vegiesTabl', JSON.stringify(vegiesTabl));
-	}
-
-	$('.vegie').on('click', function(){
-		// console.log($(this).attr('sp'));
-		// console.log($(this).attr('su'));
-		// console.log($(this).attr('au'));
-		// console.log($(this).attr('wi'));
-		var name = $(this).attr('name');
-		if(vegiesTabl.includes(name)){
-			vegiesTabl.splice(vegiesTabl.indexOf(name), 1);
-		}else{
-			vegiesTabl.push(name);
-		}
-		$('#basketReceiver').html('');
-		vegiesTabl.forEach(function(a){
-			$('#basketReceiver').append('<span id="'+ a +'"><span>X </span>'+ a +'</span><span>, ')
-		})
-		localStorage.setItem('vegiesTabl', JSON.stringify(vegiesTabl));
-		checkLight();
-	})
-
-	function checkLight(){
-		$('.vegie').each(function(){
-			if(vegiesTabl.includes($(this).attr('name'))){
-				$(this).attr('class', 'vegie btn btn-success');
-			}else{
-				$(this).attr('class', 'vegie btn btn-secondary');
-			}
-		})
-	}checkLight();
-
-	function vegieSearch(str){
-		$('.vegie').each(function(){
-			if(!$(this).attr('name').includes(str)){
-				$(this).hide();
-			}else{
-				$(this).show();
-			}
-
-		})
-	}
-	function checkedSeasons(){
-		var checked_seasons = [];
-		$('.checkbox-inline').each(function(){
-			if($(this).children().is(':checked')){
-				checked_seasons.push($(this).children().attr('name'));
-			}
-		})
-		return [checked_seasons];
-	}
-
-	$('#searchVegie').on('keyup', function(){
-		vegieSearch($(this).val());
-	})
-
-	$('.checkbox-inline').on('click',function(){
-		var checked_seasons = checkedSeasons();
-		console.log(checked_seasons)
-
-	})
-
-</script>
 @endsection
 
 
 @section('css')
-<style>
-	.vegie{
-		margin-bottom: 3px;
-	}
-</style>
+
+    <link href="{{ asset('css/basket.css') }}" rel="stylesheet">
+
 @endsection

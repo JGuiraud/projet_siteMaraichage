@@ -1,0 +1,22 @@
+.vegie{
+    margin-bottom: 3px;
+}
+
+.borderDiv {
+    border: 1px #CCD0D2 solid;
+    padding: 20px;
+    border-radius: 4px;
+    background: #F5F5F5;
+}
+
+.fa-times:hover {
+    cursor: pointer;
+}
+
+input[type=search]::-webkit-search-cancel-button {
+    -webkit-appearance: searchfield-cancel-button;
+}
+
+input[type=search]::-webkit-search-cancel-button:hover {
+    cursor: pointer;
+}
