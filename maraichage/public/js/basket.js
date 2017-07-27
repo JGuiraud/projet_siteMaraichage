@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
     $('#validateBasket').on('click', function () {
         $('#formBasket').submit();
     });
@@ -8,12 +7,12 @@ $(document).ready(function () {
     function displayBasket(tab) {
         $('#basketReceiver').html('');
         tab.forEach(function (a) {
-            $('#basketReceiver').append('<span id="' + a + '"><span class="removefromBasket fa fa-times"> </span> ' + a + '</span><span>, ')
+            $('#basketReceiver').append('<span id="' + a + '"><span class="removefromBasket fa fa-times"> </span> ' + a + '</span><span>, ');
         });
         $('.removefromBasket').each(function () {
             $(this).on('click', function () {
                 var name = $(this).parent().attr('id');
-                console.log(name)
+                console.log(name);
                 if (vegiesTabl.includes(name)) {
                     vegiesTabl.splice(vegiesTabl.indexOf(name), 1);
                 }
@@ -23,24 +22,16 @@ $(document).ready(function () {
             });
         });
     }
-    var vegiesTabl = []
+    var vegiesTabl = [];
     if (localStorage.getItem('vegiesTabl')) {
         vegiesTabl = JSON.parse(localStorage.getItem('vegiesTabl'));
         displayBasket(vegiesTabl);
-
     } else {
         vegiesTabl = [];
-        // console.log(vegiesTabl);
         localStorage.setItem('vegiesTabl', JSON.stringify(vegiesTabl));
     }
 
     $('.vegie').on('click', function () {
-        // console.log($(this).attr('sp'));
-        // console.log($(this).attr('su'));
-        // console.log($(this).attr('au'));
-        // console.log($(this).attr('wi'));
-
-        // console.log($(this));
         var name = $(this).attr('name');
         if (vegiesTabl.includes(name)) {
             vegiesTabl.splice(vegiesTabl.indexOf(name), 1);
@@ -48,10 +39,10 @@ $(document).ready(function () {
             vegiesTabl.push(name);
         }
         $('#basketReceiver').html('');
-        displayBasket(vegiesTabl)
+        displayBasket(vegiesTabl);
         localStorage.setItem('vegiesTabl', JSON.stringify(vegiesTabl));
         checkLight();
-    })
+    });
 
     function checkLight() {
         $('.vegie').each(function () {
@@ -60,19 +51,9 @@ $(document).ready(function () {
             } else {
                 $(this).attr('class', 'vegie btn btn-secondary');
             }
-        })
+        });
     } checkLight();
 
-    function vegieSearch(str) {
-        $('.vegie').each(function () {
-            if (!$(this).attr('name').includes(str)) {
-                $(this).hide();
-            } else {
-                $(this).show();
-            }
-
-        })
-    }
     function checkedSeasons() {
         var checked_seasons = [];
         $('.checkbox-inline').each(function () {
@@ -83,17 +64,15 @@ $(document).ready(function () {
             }
         });
         return checked_seasons;
-    } var coucou = checkedSeasons();
+    }
 
-    function seasonsFilter() {
+    function MEGAFILTER() {
+        var tab = [];
         var checked_seasons = checkedSeasons();
-        // console.log(checked_seasons);
         $('.vegie').each(function () {
             var seasonTableVegieClicked = [];
             var compare = [];
             var t = $(this);
-            var j = 0;
-
             seasonTableVegieClicked = [t.attr('sp'), t.attr('su'), t.attr('au'), t.attr('wi')];
             for (var i = 0; i < 4; i++) {
                 if (parseInt(seasonTableVegieClicked[i]) && parseInt(checked_seasons[i])) {
@@ -102,27 +81,31 @@ $(document).ready(function () {
                     compare.push('0');
                 }
             }
-            if (JSON.stringify(checked_seasons) !== JSON.stringify(compare)) {
-                t.hide();
-            } else {
-                t.show();
+            if (JSON.stringify(checked_seasons) == JSON.stringify(compare) && $(this).attr('name').includes($('#searchVegie').val())) {
+                tab.push($(this).attr('name'));
             }
-            // console.log(seasonTableVegieClicked);
-            console.log(checked_seasons);
-            console.log(compare);
-            console.log('   ');
-            // console.log(checked_seasons[i]);
         });
+        return tab;
     }
 
     $('#searchVegie').on('keyup', function () {
-        vegieSearch($(this).val());
-        seasonsFilter();
-    })
-
-    $(':checkbox').on('click', function () {
-        seasonsFilter();
-        vegieSearch($('#searchVegie').val());
+        $('.vegie').each(function () {
+            if (MEGAFILTER().includes($(this).attr('name'))) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
     });
 
-})
+    $(':checkbox').on('click', function () {
+        $('.vegie').each(function () {
+            if (MEGAFILTER().includes($(this).attr('name'))) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
+
+});
