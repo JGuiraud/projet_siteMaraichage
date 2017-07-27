@@ -63,12 +63,17 @@
 								<th>Hiv.</th>
 							</tr>
 						</thead>
+						{{-- toute la suite de VegetableController@show ce trouve dans cette boucle --}}
 						@foreach($vegies as $key => $vegie)
+						{{-- pour chacun des légumes --}}
+
 						<tr>
 							<td style="text-align:center;"><i class="fa fa-times deleteVegie" href="/legumes/suppr/{{ $vegie->id }}" name="{{ $vegie->name }}"></i></td>
 							<td>{{ $vegie->name }}</td>
+								{{-- on fait 4 colones dans l'ordre spring summer autumn winter et on place sous condition soit un 'tick' ('&#10003') soit un trait d'union, c'est pour cette raison qu'on a stocker soit des 1 soit des 0 --}}
 							<td>
-								@if($vegiesSeasons[$key][0])
+								@if($vegiesSeasons[$key][0]) 
+								{{-- ici le 0 est la position qu'on a donner a spring --}}
 								&#10003
 								@else
 								-
@@ -76,6 +81,7 @@
 							</td>
 							<td>
 								@if($vegiesSeasons[$key][1])
+								{{-- ici le 1 est la position qu'on a donner a summer --}}
 								&#10003
 								@else
 								-
