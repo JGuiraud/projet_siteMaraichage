@@ -1,4 +1,4 @@
-//Autocompletion
+// autocompletion
 var autocomplete;
 
 function initAutocomplete() {
@@ -12,7 +12,7 @@ function initAutocomplete() {
     initMap(); //map.js
 }
 
-//condition enable submit button
+// condition enable submit button
 $('.btn').prop('disabled', true);
 $('body').keyup(function() {
     var city = $('#city').val();
@@ -24,7 +24,7 @@ $('body').keyup(function() {
     }
 });
 
-//condition control existing market
+// condition control existing market
 $('body').click(function() {
     $('.market_city').each(function() {
         if ($(this).text() == $('#city_bdd').val()) {
@@ -36,7 +36,7 @@ $('body').click(function() {
     });
 });
 
-//find only city string and call api geocode
+// find only city string and call api geocode
 $('#details').focusin(function() {
     var city = $('#city').val().replace(/\d+/g, '').replace(' ', '').split(',')[0].replace(',', '');
     if (city.includes(' ')) {
@@ -56,7 +56,7 @@ $('#details').focusin(function() {
     }
 });
 
-//find city latitude and longitude
+// find city latitude and longitude
 function geolocation(data) {
     var latitude = data.results[0].geometry.location.lat;
     var longitude = data.results[0].geometry.location.lng;

@@ -1,8 +1,10 @@
 @extends('layouts.app')
 @section('css')
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css">
+ <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"> -->
+    <link href="{{ asset('css/map.css') }}" rel="stylesheet">
 
 @endsection
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -56,14 +58,16 @@
                                 <td>
                                     @if ($market->id !== 1)
                                     <a class="btn btn-default btn-xs" href="/supprimer/marche/{{ $market->id }}">
-                                        <span class="glyphicon glyphicon-remove"></span>
+                                         <span class="glyphicon glyphicon-remove"></span> 
                                     </a>
                                     @endif
                                 </td>
                                 <!-- <td>{{ $market->id }}</td> -->
                                 <td class="market_city">{{ $market->city }}</td>
-                                <!-- <td>{{ $market->latitude }}</td>
-                                <td>{{ $market->longitude }}</td> -->
+                                    @if ($market->id !== 1)
+                                    <td class="market_latitude" hidden>{{ $market->latitude }}</td>
+                                    <td class="market_longitude" hidden>{{ $market->longitude }}</td> 
+                                    @endif
                                 <td>{{ $market->details }}</td>
                             </tr>
                             @endforeach
@@ -84,14 +88,8 @@
 @endsection
 @section('js')
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7EtFbAhBZWZMCI_9OaOpLNPkjVRcKlGU&libraries=places&callback=initAutocomplete" async defer></script>
-    <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"></script>
+    <!-- <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"></script> -->
     <script src="{{ asset('js/form.js') }}"></script>
     <script src="{{ asset('js/map.js') }}"></script>
-
-@endsection
-
-@section('css')
-
-    <link href="{{ asset('css/map.css') }}" rel="stylesheet">
 
 @endsection
