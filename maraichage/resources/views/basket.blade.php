@@ -42,6 +42,7 @@
 								</label>
 							</div>
 						</div>
+						<i class="fa fa-trash" aria-hidden="true" title="Vider le panier"></i>
 						<span id="titleBasket">Récapitulatif du panier sélectionné :</span>
 						<div id="basketReceiver" class="borderDiv"></div>
 					</form>

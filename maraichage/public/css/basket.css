@@ -9,6 +9,10 @@
     background: #F5F5F5;
 }
 
+.fa-trash:hover {
+    cursor: pointer;
+}
+
 .fa-times:hover {
     cursor: pointer;
 }

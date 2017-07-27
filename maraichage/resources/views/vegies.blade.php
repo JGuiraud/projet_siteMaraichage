@@ -105,6 +105,39 @@
 					</table>
 				</div>
 			</div>
+{{-- Modals --}}
+				<div class="modal fade" id="modal" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h3 class="modal-title">Attention !</h3>
+							</div>
+							<div class="modal-body">
+								<p>Pour ajouter un légume, vous devez entrer son nom d'abord.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade" id="modal2" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h3 class="modal-title">Attention !</h3>
+							</div>
+							<div class="modal-body">
+								<p>Le légume que vous essayez d'ajouter existe déjà dans la liste</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+							</div>
+						</div>
+					</div>
+				</div>
 		</div>
 	</div>
 </div>

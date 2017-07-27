@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+    $('.fa-trash').on('click', function () {
+        localStorage.clear();
+        location.reload();
+        // console.log('clear');
+    });
+
     $('#validateBasket').on('click', function () {
         $('#formBasket').submit();
     });

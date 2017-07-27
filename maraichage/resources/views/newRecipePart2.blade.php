@@ -5,9 +5,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-        <div class="retour">
-            <a href="/recettes" class="btn btn-danger">Annuler et retour</a>
-        </div>
+            <div class="retour">
+                <a href="/nouvelle/recette/part1" class="btn btn-primary"><i class="fa fa-backward" aria-hidden="true"></i> Retour au panier</a>
+                <a href="/admin" class="btn btn-danger annulerRecette">Annuler et retour menu</a>
+            </div>
+
+
 
         <br>
             <div class="panel panel-default">
@@ -30,20 +33,8 @@
 
                             <label class="control-label col-sm-2" for="title"><i class="fa fa-question-circle" aria-hidden="true" title="Ces ingrédients sont ceux sélectionnés précédemment. Veuillez entrez les quantités associées"></i> Ingrédients</label>
                             <div class="form-group col-sm-10 localstorageReceiver">
-                                <input name="nbIngredients" type="text" value="4" hidden>
-                                <div class="col-sm-6">
-                                    <label class="control-label">Tomates</label><input type="text" name="ingredient1" value="tomate radioactive" hidden><input class="form-control col-sm-3" type="text" placeholder='quantité' name="quantity1" value="" required>
+                                <input class="nbIngredients" name="nbIngredients" type="text" value="" hidden>
                                 </div>
-                                <div class="col-sm-6">
-                                    <label class="control-label">Tomates</label><input type="text"  name="ingredient2" value="tomate" hidden><input class="form-control col-sm-3" type="text" placeholder='quantité' name="quantity2" value="" required>
-                                </div>
-                                <div class="col-sm-6">
-                                    <label class="control-label">Tomates</label><input type="text"  name="ingredient3" value="tomate tueuse" hidden><input class="form-control col-sm-3" type="text" placeholder='quantité' name="quantity3" value="coulis" required>
-                                </div>
-                                <div class="col-sm-6">
-                                    <label class="control-label">Tomates</label><input type="text"  name="ingredient4" value="tomate gentille" hidden><input class="form-control col-sm-3" type="text" placeholder='quantité' name="quantity4" value="4 coupées en cube" required>
-                                </div>
-                            </div>
                         </div>
 
                         <div class="form-group">

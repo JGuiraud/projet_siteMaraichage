@@ -9,9 +9,9 @@ function checkAlreadyExistsInList() {
 
 $('#subm').on('click', function () {
     if (!$("#addVegie").val()) {
-        alert('Veuillez entrer le nom d\'un légume à ajouter');
+        $("#modal").modal();
     } else if (checkAlreadyExistsInList()) {
-        alert('Ce légume existe déjà dans la liste !');
+        $("#modal2").modal();
     } else {
         $('#vegieForm').submit()
     }
@@ -23,4 +23,9 @@ $('.deleteVegie').on('click', function (e) {
     if (r == true) {
         window.location = $(this).attr('href');
     }
+});
+
+$(document).ready(function () {
+    $("#fireme").click(function () {
+    });
 });

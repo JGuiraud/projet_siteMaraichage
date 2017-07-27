@@ -32,7 +32,7 @@ class RecipesController extends Controller
         $ingredients = [];
         $quantity = [];
         // on prépare des tableaux vides pour mettre, les ingrédients et leurs quantités respectives
-        for ($i=1; $i<=$nbIngredients; $i++) {
+        for ($i=0; $i<$nbIngredients; $i++) {
             $ingredients[] = $request->input('ingredient'.$i);
             $quantity[] = $request->input('quantity'.$i);
         }
