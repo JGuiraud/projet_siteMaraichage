@@ -25,7 +25,7 @@
 							<label class="control-label col-sm-2" for="title">Saison(s)</label>
 							<div class="col-xs-offset-1">
 								<label class="checkbox-inline">
-									<input name="sp" type="checkbox" id="sp"> Printemps
+									<input name="sp" type="checkbox" id="sp"> <span>Printemps</span>
 								</label>
 								<label class="checkbox-inline">
 									<input name="su" type="checkbox" id="su"> Été
@@ -63,7 +63,7 @@
 						<input type="checkbox" autocomplete="off" class="badgebox"> {{ $vegie->name }}
 					</label> --}}
 					{{-- <input class="vegie" name="{{ $vegie->name }}" type="checkbox" data-toggle="toggle" data-on="{{ $vegie->name }}" data-off="{{ $vegie->name }}"> --}}
-					<button class="btn btn-secondary vegie" name="{{ $vegie->name }}">{{ $vegie->name }}</button>
+					<button class="btn btn-secondary vegie" name="{{ $vegie->name }}" sp="{{ $vegiesSeasons[$key][0] }}" su="{{ $vegiesSeasons[$key][1] }}" au="{{ $vegiesSeasons[$key][2] }}" wi="{{ $vegiesSeasons[$key][3] }}">{{ $vegie->name }}</button>
 
 					@endforeach
 				</div>
