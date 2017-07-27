@@ -1,16 +1,5 @@
-/*.btn.btn-success {
-    margin-top: 1vh;
-    margin-left: 1vw;
-}*/
-
-/*.form-control {
-    margin-left: 1vw;
-}*/
-
 #map {
     height: 80vh;
-     width: 10%;
-    /* position: relative; */
 }
 
 .leaflet-control-zoom.leaflet-bar.leaflet-control {

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('css')
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css">
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css">
+    <link href="{{ asset('css/map.css') }}" rel="stylesheet">
 @endsection
 @section('content')
 <div class="container">
@@ -90,8 +90,6 @@
 
 @endsection
 
-@section('css')
 
-    <link href="{{ asset('css/map.css') }}" rel="stylesheet">
 
-@endsection
+
