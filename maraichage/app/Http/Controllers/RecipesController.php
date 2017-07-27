@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Recipe;
-
+use App\Vegetable;
+use App\Season;
 use Illuminate\Http\Request;
 
 class RecipesController extends Controller
@@ -25,9 +26,6 @@ class RecipesController extends Controller
      */
     public function create(Request $request)
     {
-
-
-
         $nbIngredients = intval($request->input('nbIngredients'));
         $nbExtraingredients = intval($request->input('nbExtraingredients'));
         // on récupère le nombre d'ingrédients et d'extra-ingrédients présents dans la recette
@@ -38,7 +36,7 @@ class RecipesController extends Controller
             $ingredients[] = $request->input('ingredient'.$i);
             $quantity[] = $request->input('quantity'.$i);
         }
-        // on rempli les tableaux avec les donnée qui porte les attributs name ingredient1, ingredient2, ingredient3.. etc de même pour les quantités 
+        // on rempli les tableaux avec les donnée qui porte les attributs name ingredient1, ingredient2, ingredient3.. etc de même pour les quantités
 
         $extraIngredients = [];
         $extraQuantity = [];
@@ -79,9 +77,28 @@ class RecipesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function selectBasket(Request $request)
     {
-        //
+        $button = false;
+        $vegies = Vegetable::all();
+        $vegiesSeasons = [];
+        $seasonsTable = ['sp', 'su', 'au', 'wi'];
+        foreach ($vegies as $key => $vegie) {
+            $j=0;
+            for ($i = 0; $i < count($seasonsTable); $i++) {
+                if (count($vegie->seasons)>$j) {
+                    if ($seasonsTable[$i] !== $vegie->seasons[$j]->slug) {
+                        $vegiesSeasons[$key][$i]=0;
+                    } else {
+                        $vegiesSeasons[$key][$i]=1;
+                        $j++;
+                    }
+                } else {
+                    $vegiesSeasons[$key][$i]=0;
+                }
+            }
+        }
+        return view('basket', compact('vegies', 'vegiesSeasons', 'button'));
     }
 
     /**

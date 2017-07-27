@@ -46,4 +46,8 @@
 @endsection
 
 @section('js')
+
+    <script src="{{ asset('js/recipe1.js') }}"></script>
+
+
 @endsection

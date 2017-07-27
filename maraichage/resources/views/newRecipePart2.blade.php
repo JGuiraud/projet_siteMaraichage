@@ -29,9 +29,9 @@
                         <div class="form-group">
 
                             <label class="control-label col-sm-2" for="title"><i class="fa fa-question-circle" aria-hidden="true" title="Ces ingrédients sont ceux sélectionnés précédemment. Veuillez entrez les quantités associées"></i> Ingrédients</label>
-                            <div class="form-group col-sm-10">
+                            <div class="form-group col-sm-10 localstorageReceiver">
+                                <input name="nbIngredients" type="text" value="4" hidden>
                                 <div class="col-sm-6">
-                                    <input name="nbIngredients" type="text" value="4" hidden>
                                     <label class="control-label">Tomates</label><input type="text" name="ingredient1" value="tomate radioactive" hidden><input class="form-control col-sm-3" type="text" placeholder='quantité' name="quantity1" value="" required>
                                 </div>
                                 <div class="col-sm-6">
@@ -96,17 +96,5 @@ Raptim igitur properantes ut motus sui rumores celeritate nimia praevenirent, vi
 @endsection
 
 @section('js')
-<script>
-    $('#submitRecipe').on('click', function() {
-        if( !$('#title').val()) {
-            $('#title').addClass('warning');
-        }if(!$('#description').val()){
-            $('#description').addClass('warning');
-        }if($('#title').val() && $('#description').val()) {
-            $('#title').removeClass('warning');
-            $('#description').removeClass('warning');
-            $('#newRecipeForm').submit();
-        }
-    })
-</script>
+    <script src="{{ asset('js/recipe2.js') }}"></script>
 @endsection

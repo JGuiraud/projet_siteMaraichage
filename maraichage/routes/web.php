@@ -28,7 +28,7 @@ Route::get('/supprimer/recette/{id}', 'RecipesController@destroy');
 
 // Route::get('/ajouter/recette/', 'RecipesController@create');
 Route::get('/details/recette/{id}', 'RecipesController@details');
-Route::get('/nouvelle/recette/part1', 'RecipesController@newRecipePart1');
+Route::get('/nouvelle/recette/part1', 'RecipesController@selectBasket');
 Route::get('/nouvelle/recette/part2', 'RecipesController@newRecipePart2');
 Route::post('/nouvelle/recette/part3', 'RecipesController@create')->name('createRecipe');
 

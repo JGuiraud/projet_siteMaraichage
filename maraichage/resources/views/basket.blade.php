@@ -8,7 +8,11 @@
                 <a href="/admin" class="btn btn-danger"><i class="fa fa-backward" aria-hidden="true"></i>
                 Retour Menu</a>
         	</div>
-			<h3>Panier & Recette</h3>
+			@if($button)
+				<h3>Panier & Recette</h3>
+			@else
+				<h3>Ajouter un recette : sélection des légumes</h3>
+			@endif
 
 			<div class="panel panel-default">
 				<div class="panel-heading">Recherche</div>
@@ -43,7 +47,13 @@
 					</form>
 				</div>
 				<div class="panel-footer">
-					<button class="btn btn-success" id="validateBasket"><i class="fa fa-check"></i> Valider panier</button>
+				@if($button)
+					<a href='/' class="btn btn-success" id="validateBasket"><i class="fa fa-check"></i>
+					Valider panier</a>
+				@else
+					<a href='/nouvelle/recette/part2' class="btn btn-success" id="validateBasket"><i class="fa fa-check"></i>
+					Valider panier</a>
+				@endif
 				</div>
 			</div>
 		</div>
@@ -75,7 +85,11 @@
 @endsection
 
 @section('js')
+	@if($button)
     <script src="{{ asset('js/basket.js') }}"></script>
+	@else
+    <script src="{{ asset('js/recipe1.js') }}"></script>
+	@endif
 
 @endsection
 

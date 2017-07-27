@@ -26,16 +26,16 @@
 							<label class="control-label col-sm-2" for="title">Saison(s)</label>
 							<div class="col-xs-offset-1">
 								<label class="checkbox-inline">
-									<input name="sp" type="checkbox" id="sp"> Printemps
+									<input name="season[sp]" type="checkbox" id="sp"> Printemps
 								</label>
 								<label class="checkbox-inline">
-									<input name="su" type="checkbox" id="su"> Été
+									<input name="season[su]" type="checkbox" id="su"> Été
 								</label>
 								<label class="checkbox-inline">
-									<input name="au" type="checkbox" id="au"> Automne
+									<input name="season[au]" type="checkbox" id="au"> Automne
 								</label>
 								<label class="checkbox-inline">
-									<input name="wi" type="checkbox" id="wi"> Hiver
+									<input name="season[wi]" type="checkbox" id="wi"> Hiver
 								</label>
 							</div>
 						</div>
@@ -66,13 +66,12 @@
 						{{-- toute la suite de VegetableController@show ce trouve dans cette boucle --}}
 						@foreach($vegies as $key => $vegie)
 						{{-- pour chacun des légumes --}}
-
 						<tr>
 							<td style="text-align:center;"><i class="fa fa-times deleteVegie" href="/legumes/suppr/{{ $vegie->id }}" name="{{ $vegie->name }}"></i></td>
 							<td>{{ $vegie->name }}</td>
 								{{-- on fait 4 colones dans l'ordre spring summer autumn winter et on place sous condition soit un 'tick' ('&#10003') soit un trait d'union, c'est pour cette raison qu'on a stocker soit des 1 soit des 0 --}}
 							<td>
-								@if($vegiesSeasons[$key][0]) 
+								@if($vegie->seasons->contains('slug', 'sp'))
 								{{-- ici le 0 est la position qu'on a donner a spring --}}
 								&#10003
 								@else
@@ -80,7 +79,7 @@
 								@endif
 							</td>
 							<td>
-								@if($vegiesSeasons[$key][1])
+								@if($vegie->seasons->contains('slug', 'su'))
 								{{-- ici le 1 est la position qu'on a donner a summer --}}
 								&#10003
 								@else
@@ -88,14 +87,14 @@
 								@endif
 							</td>
 							<td>
-								@if($vegiesSeasons[$key][2])
+								@if($vegie->seasons->contains('slug', 'au'))
 								&#10003
 								@else
 								-
 								@endif
 							</td>
 							<td>
-								@if($vegiesSeasons[$key][3])
+								@if($vegie->seasons->contains('slug', 'wi'))
 								&#10003
 								@else
 								-

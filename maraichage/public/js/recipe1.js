@@ -13,40 +13,40 @@ $(document).ready(function () {
             $(this).on('click', function () {
                 var name = $(this).parent().attr('id');
                 console.log(name);
-                if (vegiesTabl.includes(name)) {
-                    vegiesTabl.splice(vegiesTabl.indexOf(name), 1);
+                if (vegiesInBasketForRecipe.includes(name)) {
+                    vegiesInBasketForRecipe.splice(vegiesInBasketForRecipe.indexOf(name), 1);
                 }
-                localStorage.setItem('vegiesTabl', JSON.stringify(vegiesTabl));
-                displayBasket(vegiesTabl);
+                localStorage.setItem('vegiesInBasketForRecipe', JSON.stringify(vegiesInBasketForRecipe));
+                displayBasket(vegiesInBasketForRecipe);
                 checkLight();
             });
         });
     }
-    var vegiesTabl = [];
-    if (localStorage.getItem('vegiesTabl')) {
-        vegiesTabl = JSON.parse(localStorage.getItem('vegiesTabl'));
-        displayBasket(vegiesTabl);
+    var vegiesInBasketForRecipe = [];
+    if (localStorage.getItem('vegiesInBasketForRecipe')) {
+        vegiesInBasketForRecipe = JSON.parse(localStorage.getItem('vegiesInBasketForRecipe'));
+        displayBasket(vegiesInBasketForRecipe);
     } else {
-        vegiesTabl = [];
-        localStorage.setItem('vegiesTabl', JSON.stringify(vegiesTabl));
+        vegiesInBasketForRecipe = [];
+        localStorage.setItem('vegiesInBasketForRecipe', JSON.stringify(vegiesInBasketForRecipe));
     }
 
     $('.vegie').on('click', function () {
         var name = $(this).attr('name');
-        if (vegiesTabl.includes(name)) {
-            vegiesTabl.splice(vegiesTabl.indexOf(name), 1);
+        if (vegiesInBasketForRecipe.includes(name)) {
+            vegiesInBasketForRecipe.splice(vegiesInBasketForRecipe.indexOf(name), 1);
         } else {
-            vegiesTabl.push(name);
+            vegiesInBasketForRecipe.push(name);
         }
         $('#basketReceiver').html('');
-        displayBasket(vegiesTabl);
-        localStorage.setItem('vegiesTabl', JSON.stringify(vegiesTabl));
+        displayBasket(vegiesInBasketForRecipe);
+        localStorage.setItem('vegiesInBasketForRecipe', JSON.stringify(vegiesInBasketForRecipe));
         checkLight();
     });
 
     function checkLight() {
         $('.vegie').each(function () {
-            if (vegiesTabl.includes($(this).attr('name'))) {
+            if (vegiesInBasketForRecipe.includes($(this).attr('name'))) {
                 $(this).attr('class', 'vegie btn btn-success');
             } else {
                 $(this).attr('class', 'vegie btn btn-secondary');
