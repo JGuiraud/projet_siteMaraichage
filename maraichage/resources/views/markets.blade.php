@@ -1,8 +1,11 @@
 @extends('layouts.app')
 @section('css')
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css">
+
+ <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"> -->
     <link href="{{ asset('css/map.css') }}" rel="stylesheet">
+
 @endsection
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -56,14 +59,20 @@
                             @foreach ($markets as $market)
                             <tr>
                                 <td style="text-align:center;">
+                                    @if ($market->id !== 1)
                                     <a href="/supprimer/marche/{{ $market->id }}">
                                         <span class="fa fa-times"></span>
                                     </a>
+                                    @endif
                                 </td>
                                 <!-- <td>{{ $market->id }}</td> -->
-                                <td>{{ $market->city }}</td>
-                                <!-- <td>{{ $market->latitude }}</td>
-                                <td>{{ $market->longitude }}</td> -->
+                                <td class="market_city">{{ $market->city }}</td>
+                                    @if ($market->id !== 1)
+                                    <td class="market_city2" hidden>{{ $market->city }}</td>
+                                    <td class="market_latitude" hidden>{{ $market->latitude }}</td>
+                                    <td class="market_longitude" hidden>{{ $market->longitude }}</td>
+                                    <td class="market_details" hidden>{{ $market->details }}</td>
+                                    @endif
                                 <td>{{ $market->details }}</td>
                             </tr>
                             @endforeach
@@ -84,12 +93,8 @@
 @endsection
 @section('js')
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7EtFbAhBZWZMCI_9OaOpLNPkjVRcKlGU&libraries=places&callback=initAutocomplete" async defer></script>
-    <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"></script>
+    <!-- <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"></script> -->
     <script src="{{ asset('js/form.js') }}"></script>
     <script src="{{ asset('js/map.js') }}"></script>
 
 @endsection
-
-
-
-

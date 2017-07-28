@@ -13,9 +13,9 @@ class MarketsTableSeeder extends Seeder
     public function run()
     {
         DB::table('markets')->insert([
-        'city' => 'Saint-Frajou',
-        'latitude' => '43.333316',
-        'longitude' => '0.849494',
+        'city' => 'Ferme des Moulères, Saint-Frajou',
+        'latitude' => '43.3145278',
+        'longitude' => '0.8568888',
         'details' => 'Vente à l\'exploitation tous les mercredis de 17h à 19h',
         ]);
     }

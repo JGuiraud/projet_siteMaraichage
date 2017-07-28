@@ -9,7 +9,11 @@
                 Retour Menu</a>
         	</div>
 			@if($button)
-				<h3>Panier & Recette</h3>
+				<h3>Imprimer une recette</h3>
+				<div class="panel panel-default warningpanel">
+					<div class="panel-body"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+					Pour imprimer ou mettre en avant une recette sur le site site internet, il est nécessaire de d'abord choisir les légumes que vous souhaitez utiliser. Plusieurs recettes seront alors proposées dans la page suivante.</div>
+				</div>
 			@else
 				<h3>Ajouter un recette : sélection des légumes</h3>
 			@endif
@@ -42,9 +46,11 @@
 								</label>
 							</div>
 						</div>
-						<i class="fa fa-trash" aria-hidden="true" title="Vider le panier"></i>
+
+							<i class="fa fa-trash" title="Vider le panier"> | </i>
 						<span id="titleBasket">Récapitulatif du panier sélectionné :</span>
-						<div id="basketReceiver" class="borderDiv"></div>
+						<div id="basketReceiver" class="borderDiv">
+						</div>
 					</form>
 				</div>
 				<div class="panel-footer">
