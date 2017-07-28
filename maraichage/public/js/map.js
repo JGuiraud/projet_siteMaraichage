@@ -42,12 +42,13 @@ function initMap() {
     // create all markets markers
     $(id).each(function(i) {
         var markets_LatLng = { lat: parseFloat(latitude[i]), lng: parseFloat(longitude[i]) }
-        if (id[i] != 1) {
+        if (this[i] != 1) {
             var markers_markets = new google.maps.Marker({
                 map: map,
                 position: markets_LatLng,
                 animation: google.maps.Animation.DROP,
-                title: city[i]
+                title: city[i],
+                icon: "http://maps.google.com/mapfiles/marker.png"
             });
             var markets_details = new google.maps.InfoWindow({
                 content: '<h4>Marché de: ' +
@@ -77,13 +78,11 @@ function initMap() {
             });
         }
         markers_markets.addListener('click', function() {
-            markets_details.close();
-            markets_details.open(map, markers_markets);
+            if (typeof(window.infoopened) != 'undefined') {
+                infoopened.close();
+            }
+            markets_details.open(map, this);
+            infoopened = markets_details;
         });
     });
-
-
-
-
-
 }
