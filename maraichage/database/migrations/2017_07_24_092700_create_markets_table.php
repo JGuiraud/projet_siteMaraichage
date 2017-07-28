@@ -18,7 +18,7 @@ class CreateMarketsTable extends Migration
             $table->string('city');
             $table->string('latitude');
             $table->string('longitude');
-            $table->string('details');
+            $table->string('details', 500);
             $table->timestamps();
         });
     }

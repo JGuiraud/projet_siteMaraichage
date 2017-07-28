@@ -2,7 +2,6 @@
     height: 80vh;
 }
 
-
-/* .leaflet-control-zoom.leaflet-bar.leaflet-control {
-    display: none;
-} */
+p {
+    text-align: justify;
+}

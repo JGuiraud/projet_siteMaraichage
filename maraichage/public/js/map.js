@@ -34,12 +34,12 @@ function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
         center: myLatLng,
         scrollwheel: false,
-        zoom: 10,
+        zoom: 9,
         maxZoom: 12,
         minZoom: 9
     });
 
-    // create all markets markers
+    // create all markets markers with infowindow
     $(id).each(function(i) {
         var markets_LatLng = { lat: parseFloat(latitude[i]), lng: parseFloat(longitude[i]) }
         if (this[i] != 1) {
@@ -51,13 +51,13 @@ function initMap() {
                 icon: "http://maps.google.com/mapfiles/marker.png"
             });
             var markets_details = new google.maps.InfoWindow({
-                content: '<h4>Marché de: ' +
+                content: '<h5>Marché de: ' +
                     city[i] +
-                    '</h4><hr>' +
-                    '<h5>' +
+                    '</h5><hr>' +
+                    '<p>' +
                     details[i] +
-                    '</h5>',
-                maxWidth: 200
+                    '</p>',
+                maxWidth: 300
             });
         } else {
             var markers_markets = new google.maps.Marker({
@@ -68,13 +68,13 @@ function initMap() {
                 icon: "http://maps.google.com/mapfiles/marker_green.png"
             });
             var markets_details = new google.maps.InfoWindow({
-                content: '<h4>' +
+                content: '<h5>' +
                     city[i] +
-                    '</h4><hr>' +
-                    '<h5>' +
+                    '</h5><hr>' +
+                    '<p>' +
                     details[i] +
-                    '</h5>',
-                maxWidth: 200
+                    '</p>',
+                maxWidth: 300
             });
         }
         markers_markets.addListener('click', function() {
@@ -83,6 +83,11 @@ function initMap() {
             }
             markets_details.open(map, this);
             infoopened = markets_details;
+        });
+        map.addListener('click', function() {
+            if (typeof(window.infoopened) != 'undefined') {
+                infoopened.close();
+            }
         });
     });
 }
