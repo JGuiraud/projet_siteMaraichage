@@ -21,7 +21,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Recherche</div>
 				<div class="panel-body">
-					<form method="post" class="form-horizontal" id="formBasket">
+					<form action='/suggestion/recettes' method="get" class="form-horizontal" id="formBasket">
 						{{ csrf_field() }}
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="searchVegie">Nom</label>
@@ -51,12 +51,16 @@
 						<span id="titleBasket">Récapitulatif du panier sélectionné :</span>
 						<div id="basketReceiver" class="borderDiv">
 						</div>
+						@if($button)
+						<div id="inputReceiver">
+						</div>
+						@endif
 					</form>
 				</div>
 				<div class="panel-footer">
 				@if($button)
-					<a href='/' class="btn btn-success" id="validateBasket"><i class="fa fa-check"></i>
-					Valider panier</a>
+					<a class="btn btn-success" id="validateBasket"><i class="fa fa-check"></i>
+					Trouver des recettes</a>
 				@else
 					<a href='/nouvelle/recette/part2' class="btn btn-success" id="validateBasket"><i class="fa fa-check"></i>
 					Valider panier</a>
@@ -71,17 +75,8 @@
 				<div class="panel-heading">Gérer les légumes présents</div>
 				<div class="panel-body">
 					@foreach($vegies as $key => $vegie)
-					{{-- <label class="btn btn-primary vegie"
-					name='{{ $vegie->name }}'
-					sp="@if($vegiesSeasons[$key][0]) 1 @else 0 @endif"
-					su="@if($vegiesSeasons[$key][1]) 1 @else 0 @endif"
-					au="@if($vegiesSeasons[$key][2]) 1 @else 0 @endif"
-					wi="@if($vegiesSeasons[$key][3]) 1 @else 0 @endif">
-						<input type="checkbox" autocomplete="off" class="badgebox"> {{ $vegie->name }}
-					</label> --}}
-					{{-- <input class="vegie" name="{{ $vegie->name }}" type="checkbox" data-toggle="toggle" data-on="{{ $vegie->name }}" data-off="{{ $vegie->name }}"> --}}
-					<button class="btn btn-secondary vegie" name="{{ $vegie->name }}" sp="{{ $vegiesSeasons[$key][0] }}" su="{{ $vegiesSeasons[$key][1] }}" au="{{ $vegiesSeasons[$key][2] }}" wi="{{ $vegiesSeasons[$key][3] }}">{{ $vegie->name }}</button>
 
+					<button class="btn btn-secondary vegie" name="{{ $vegie->name }}" sp="{{ $vegiesSeasons[$key][0] }}" su="{{ $vegiesSeasons[$key][1] }}" au="{{ $vegiesSeasons[$key][2] }}" wi="{{ $vegiesSeasons[$key][3] }}">{{ $vegie->name }}</button>
 					@endforeach
 				</div>
 			</div>

@@ -5,8 +5,12 @@ $(document).ready(function () {
         location.reload();
     });
 
-    $('#validateBasket').on('click', function () {
+
+
+    $('#validateBasket').on('click', function (e) {
+        e.preventDefault();
         $('#formBasket').submit();
+
     });
 
     function displayBasket(tab) {
@@ -24,6 +28,7 @@ $(document).ready(function () {
                 localStorage.setItem('vegiesTabl', JSON.stringify(vegiesTabl));
                 displayBasket(vegiesTabl);
                 checkLight();
+                hiddenInputRefresh();
             });
         });
     }
@@ -35,7 +40,14 @@ $(document).ready(function () {
         vegiesTabl = [];
         localStorage.setItem('vegiesTabl', JSON.stringify(vegiesTabl));
     }
-
+    var y = 0;
+    function hiddenInputRefresh() {
+        $('#inputReceiver').html('');
+        for (y = 0; y < vegiesTabl.length; y++) {
+            $('#inputReceiver').append('<input name="vegies[' + y + ']" value="' + vegiesTabl[y] + '" hidden />');
+        }
+    }
+    hiddenInputRefresh()
     $('.vegie').on('click', function () {
         var name = $(this).attr('name');
         if (vegiesTabl.includes(name)) {
@@ -47,6 +59,7 @@ $(document).ready(function () {
         displayBasket(vegiesTabl);
         localStorage.setItem('vegiesTabl', JSON.stringify(vegiesTabl));
         checkLight();
+        hiddenInputRefresh();
     });
 
     function checkLight() {

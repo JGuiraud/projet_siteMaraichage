@@ -39,6 +39,7 @@ Route::post('/legumes/create', 'VegetableController@create');
 
 // Basket
 Route::get('/selectionPanier', 'VegetableController@selectBasket');
+Route::get('/suggestion/recettes', 'BasketsController@suggestRecipes');
 
 //market:
 Route::get('/marches', 'MarketsController@getMarket');
