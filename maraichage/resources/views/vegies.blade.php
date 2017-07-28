@@ -42,7 +42,7 @@
 					</form>
 				</div>
 				<div class="panel-footer">
-					<button id="subm" class="btn btn-success" type="submit"> <i class="fa fa-plus" aria-hidden="true"></i> Ajouter légume a la base</button>
+					<button id="subm" class="btn btn-success" type="submit"> <i class="fa fa-plus" aria-hidden="true"></i> Ajouter le légume</button>
 				</div>
 			</div>
 		</div>
@@ -114,7 +114,7 @@
 								<h3 class="modal-title">Attention !</h3>
 							</div>
 							<div class="modal-body">
-								<p>Pour ajouter un légume, vous devez entrer son nom d'abord.</p>
+								<p>Pour ajouter un légume, vous devez d'abord entrer son nom.</p>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
