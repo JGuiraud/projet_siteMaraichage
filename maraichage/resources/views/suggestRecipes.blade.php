@@ -11,22 +11,65 @@
             </div>
 			<h3>Suggestions</h3>
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-coucou1
-                </div>
-                <div class="panel-body">
-                {{-- @foreach($nonMatchingVegies as $vegiesTab)
-                <div>{{ $vegiesTab }}</div>
-                @endforeach --}}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    Les meilleures suggestions
+                    </div>
+                    @if($bestOnes)
 
-                    <br>
+                    @foreach($bestOnes as $bestResult)
+                        <div class="panel-body">
+                            {{ $bestResult['name'] }}
+                            <br>
+                        </div>
+                    @endforeach
+                                        @else
+                    <div class="panel-body">
+                        Pas de suggestions pour cette catégorie.
+                        <br>
+                    </div>
+                    @endif
                 </div>
-                <div class="panel-footer">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    Les autres suggestions
+
+                    </div>
+                    @if($goodOnes)
+                        @foreach($goodOnes as $goodResult)
+                            <div class="panel-body">
+                                {{ $goodOnes['name'] }}
+                                <br>
+                            </div>
+                        @endforeach
+                    @else
+                    <div class="panel-body">
+                        Pas de suggestions pour cette catégorie.
+                        <br>
+                    </div>
+                    @endif
 
                 </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    Peut correspondre
+                    </div>
+                    @if($junk)
 
-            </div>
+                    @foreach($junk as $junkResult)
+                        <div class="panel-body">
+                            {{ $junkResult['name'] }}
+                            <br>
+                        </div>
+                    @endforeach
+                                        @else
+                    <div class="panel-body">
+                        Pas de suggestions pour cette catégorie.
+                        <br>
+                    </div>
+                    @endif
+                </div>
         </div>
     </div>
 </div>
