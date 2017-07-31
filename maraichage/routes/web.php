@@ -45,3 +45,6 @@ Route::get('/suggestion/recettes', 'BasketsController@suggestRecipes');
 Route::get('/marches', 'MarketsController@getMarket');
 Route::get('/supprimer/marche/{id}', 'MarketsController@destroyMarket');
 Route::post('/nouveau/marche/', 'MarketsController@createMarket')->name('createMarket');
+
+//landing
+Route::get('/index', 'LandingController@index');

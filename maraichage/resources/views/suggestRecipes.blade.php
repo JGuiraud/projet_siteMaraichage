@@ -16,18 +16,17 @@
                     Les meilleures suggestions
                     </div>
                     @if($bestOnes)
-
-                    @foreach($bestOnes as $bestResult)
+                        @foreach($bestOnes as $bestResult)
+                            <div class="panel-body">
+                                {{ $bestResult['name'] }}
+                                <br>
+                            </div>
+                        @endforeach
+                    @else
                         <div class="panel-body">
-                            {{ $bestResult['name'] }}
+                            Pas de suggestions pour cette catégorie.
                             <br>
                         </div>
-                    @endforeach
-                                        @else
-                    <div class="panel-body">
-                        Pas de suggestions pour cette catégorie.
-                        <br>
-                    </div>
                     @endif
                 </div>
 
@@ -44,10 +43,10 @@
                             </div>
                         @endforeach
                     @else
-                    <div class="panel-body">
-                        Pas de suggestions pour cette catégorie.
-                        <br>
-                    </div>
+                        <div class="panel-body">
+                            Pas de suggestions pour cette catégorie.
+                            <br>
+                        </div>
                     @endif
 
                 </div>

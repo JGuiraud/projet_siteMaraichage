@@ -1,0 +1,225 @@
+.contentLanding {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    height: 100vh;
+}
+
+/* .menu {
+    flex-grow: 2;
+    width: 33.33%;
+} */
+/*
+#section1 {
+    flex-basis: 86%;
+}
+
+#section2, #section3 {
+    flex-basis: 7%;
+} */
+
+.flex7 {
+    flex-basis: 7%;
+}
+
+.flex86 {
+    flex-basis: 86%;
+}
+
+.flex33 {
+    flex-basis: 33.33%;
+}
+
+#section1 {
+    background: green;
+
+}
+#section2 {
+    background: grey;
+}
+#section3 {
+    background: coral;
+}
+
+
+.background {
+    background: green;
+    transition: background 1s;
+}
+
+
+#verticalTitle {
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 6.5vh;
+}
+.preview1 {
+    background: linear-gradient(rgba(220,130,130, .7), rgba(220,130,130, .7)),url('https://static.pexels.com/photos/36740/vegetables-vegetable-basket-harvest-garden.jpg') no-repeat center center ;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview1>#horizontalTitle {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    display: block;
+}
+
+.preview2 {
+    background: linear-gradient(rgba(105,80,101, .7), rgba(105,80,101, .7)),url('http://blueheatingandcooling.com/wp-content/uploads/2016/01/local-search-map-pin-ss-1920.jpg') no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview2>#horizontalTitle {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    display: block;
+}
+
+.preview3 {
+    background: linear-gradient(rgba(63,91,103, .7), rgba(63,91,103, .7)),url('https://static.pexels.com/photos/89267/pexels-photo-89267.jpeg') no-repeat center center ;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview3>#horizontalTitle {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+
+.menu-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    height: 100vh;
+    width: 100vw;
+}
+
+.menu {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 10em;
+    flex: 1 0 10em;
+    box-shadow: 0 0 30px #424242;
+
+    /* Handles any clipping/overflow issues on transition */
+    overflow: hidden;
+    padding: 1em;
+    color: white;
+    -webkit-transition: -webkit-flex-basis 300ms ease-in-out;
+    transition: -webkit-flex-basis 300ms ease-in-out;
+    transition: flex-basis 300ms ease-in-out;
+    transition: flex-basis 300ms ease-in-out, -webkit-flex-basis 300ms ease-in-out, -ms-flex-preferred-size 300ms ease-in-out;
+}
+
+.menu:hover {
+    -ms-flex-preferred-size: 10em;
+    flex-basis: 100em;
+}
+
+.menu:hover .details {
+    opacity: 1;
+}
+
+.name {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.details {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    opacity: 0;
+    -webkit-transition: opacity 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out;
+}
+.details>li {
+    font-size: 1em;
+    line-height: 2em;
+}
+
+
+@media (min-width: 200px) {
+ .menu-list {
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+         -ms-flex-direction: row;
+        flex-direction: row;
+    }
+
+    .menu {
+        -ms-flex-negative: 1;
+        flex-shrink: 1;
+    }
+
+    #verticalTitle {
+        text-transform: uppercase;
+    /* writing-mode: vertical-rl;
+    text-orientation: upright; */
+        font-size: 6.5vh;
+    }
+}
+
+@media only screen and (max-width : 450px) {
+    .menu-list {
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+         -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .menu {
+        -ms-flex-negative: 1;
+        flex-shrink: 1;
+    }
+
+    #verticalTitle {
+        text-transform: uppercase;
+        writing-mode: horizontal-tb;
+        text-orientation: sideways;
+        font-size: 6.5vh;
+    }
+}
