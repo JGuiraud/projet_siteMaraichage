@@ -53,17 +53,18 @@ class BasketsController extends Controller
             });
             $recipesVegies[] = $recipeVegies;
         }
-        //$basket = [ le panier ]
 
         $bestOnes = [];
         $goodOnes = [];
         $junk = [];
+        $keys = [];
 
         foreach ($recipesVegies as $key => $recette) {
             // DEBUT
             $matchingVegies = [];
             $nonMatchingVegies = [];
             $recetteTemp = $recette;
+
             foreach ($sortedBasketVegies as $vegie) {
                 if (!in_array($vegie, $recette)) {
                     $nonMatchingVegies [] = $vegie;
@@ -73,12 +74,7 @@ class BasketsController extends Controller
                 }
             }
 
-            if (count($matchingVegies) < 1) {
-                $matchingVegies = null;
-            }
-            if (count($nonMatchingVegies) < 1) {
-                $nonMatchingVegies = null;
-            }
+            $keys[] = $recipes[$key]->title;
 
             $result = [
                 'id' => $recipes[$key]->id,
@@ -89,24 +85,27 @@ class BasketsController extends Controller
                 'matching' => $matchingVegies,
                 'nonMatching' => $nonMatchingVegies
             ];
-            if (count($matchingVegies) === count($recette)) {
-                $bestOnes[]=$result;
-            } elseif (count($matchingVegies) === count($sortedBasketVegies) && count($recette) > count($sortedBasketVegies) && count($nonMatchingVegies) < 1) {
-                $goodOnes [] = $result;
+
+            if (count($matchingVegies) === count($recette) && count($nonMatchingVegies)<1) {
+                $bestOnes[] = $result;
+            } else if (count($matchingVegies) === count($sortedBasketVegies)) {
+                $goodOnes[] = $result;
             } else {
-                $junk [] = $result;
+                $junk[] = $result;
             }
             // FIN
         }
 
+        // dd($keys);
+
 
         uasort($junk, function ($a, $b) {
-            if ($a['matching'] == $b['matching']) {
+            if (count($a['matching']) == count($b['matching'])) {
                 return 0;
             }
-            return ($a['matching'] > $b['matching']) ? -1 : 1;
+            return (count($a['matching']) > count($b['matching'])) ? -1 : 1;
         });
-        // dd($bestOnes, $goodOnes, $junk);
+
 
         return view('suggestRecipes', compact('bestOnes', 'goodOnes', 'junk'));
     }
