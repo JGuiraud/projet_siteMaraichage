@@ -24,6 +24,10 @@ $('body').keyup(function() {
     }
 });
 
+$('#addcity').on('click', function() {
+    $('#form').submit();
+})
+
 // condition control existing market
 $('body').click(function() {
     $('.market_city').each(function() {

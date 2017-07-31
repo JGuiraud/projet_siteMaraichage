@@ -1,9 +1,6 @@
 @extends('layouts.app')
 @section('css')
-
- <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"> -->
     <link href="{{ asset('css/map.css') }}" rel="stylesheet">
-
 @endsection
 
 @section('content')
@@ -30,7 +27,7 @@
                             <br>
                             <label class="control-label col-sm-2" for="title">Commentaires</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="details" name="details" placeholder="jour, horaire, details" required>
+                                <input type="text" class="form-control" id="details" name="details" placeholder="jour, horaire, details (max 5OO caract.)" maxlength="500" required>
                             </div>
                             <input type="text" id="latitude" name="latitude" value="" hidden>
                             <input type="text" id="longitude" name="longitude" value="" hidden>
@@ -48,10 +45,7 @@
                         <thead>
                             <tr>
                                 <th id="supprimerCol">Sup.</th>
-                                <!-- <th>N°</th> -->
                                 <th>Ville</th>
-                                <!-- <th>Latitude</th>
-                                <th>Longitude</th> -->
                                 <th>Commentaires</th>
                             </tr>
                         </thead>
@@ -65,14 +59,11 @@
                                     </a>
                                     @endif
                                 </td>
-                                <!-- <td>{{ $market->id }}</td> -->
+                                 <td class="market_id" hidden>{{ $market->id }}</td> 
                                 <td class="market_city">{{ $market->city }}</td>
-                                    @if ($market->id !== 1)
-                                    <td class="market_city2" hidden>{{ $market->city }}</td>
                                     <td class="market_latitude" hidden>{{ $market->latitude }}</td>
                                     <td class="market_longitude" hidden>{{ $market->longitude }}</td>
                                     <td class="market_details" hidden>{{ $market->details }}</td>
-                                    @endif
                                 <td>{{ $market->details }}</td>
                             </tr>
                             @endforeach
@@ -93,7 +84,6 @@
 @endsection
 @section('js')
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7EtFbAhBZWZMCI_9OaOpLNPkjVRcKlGU&libraries=places&callback=initAutocomplete" async defer></script>
-    <!-- <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"></script> -->
     <script src="{{ asset('js/form.js') }}"></script>
     <script src="{{ asset('js/map.js') }}"></script>
 
