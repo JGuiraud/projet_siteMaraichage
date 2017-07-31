@@ -1,5 +1,8 @@
-@extends('layouts.app') @section('css')
-<link href="{{ asset('css/farm.css') }}" rel="stylesheet"> @endsection @section('content')
+@extends('layouts.app')
+@section('css')
+    <link href="{{ asset('css/farm.css') }}" rel="stylesheet">
+@endsection
+@section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-6">
@@ -18,7 +21,8 @@
         </div>
     </div>
 </div>
-@endsection @section('js')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
-<script src="{{ asset('js/farm.js') }}"></script>
+@endsection
+@section('js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
+    <script src="{{ asset('js/farm.js') }}"></script>
 @endsection
