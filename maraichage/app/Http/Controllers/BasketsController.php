@@ -88,25 +88,20 @@ class BasketsController extends Controller
 
             if (count($matchingVegies) === count($recette) && count($nonMatchingVegies)<1) {
                 $bestOnes[] = $result;
-            } else if (count($matchingVegies) === count($sortedBasketVegies)) {
+            // } else if (count($matchingVegies) === count($sortedBasketVegies)) {
+            } else if (count($nonMatchingVegies) < 2 || count($recetteTemp) < 2) {
                 $goodOnes[] = $result;
-            } else {
+            } else if (count($matchingVegies) > 0) {
                 $junk[] = $result;
             }
             // FIN
         }
-
-        // dd($keys);
-
-
         uasort($junk, function ($a, $b) {
             if (count($a['matching']) == count($b['matching'])) {
                 return 0;
             }
             return (count($a['matching']) > count($b['matching'])) ? -1 : 1;
         });
-
-
         return view('suggestRecipes', compact('bestOnes', 'goodOnes', 'junk'));
     }
 

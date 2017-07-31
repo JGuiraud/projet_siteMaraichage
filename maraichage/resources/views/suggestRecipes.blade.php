@@ -19,6 +19,7 @@
                 @if($bestOnes)
                     @foreach($bestOnes as $bestResult)
                         <div class="panel-body">
+                            <span style="text-align:center;"><a href="/details/recette/{{ $bestResult['id'] }}"><i class="fa fa-info-circle detailsRecipe" aria-hidden="true"></i></a></span>
                             {{ $bestResult['name'] }}
                             <br>
                             <ul>matching:
@@ -43,16 +44,23 @@
                 @if($goodOnes)
                     @foreach($goodOnes as $goodResult)
                         <div class="panel-body">
-                            {{ $goodOnes['name'] }}
+                        <span style="text-align:center;"><a href="/details/recette/{{ $goodResult['id'] }}"><i class="fa fa-info-circle detailsRecipe" aria-hidden="true"></i></a></span>
+                            {{ $goodResult['name'] }}
                             <br>
+
                             <ul>matching:
                                 @foreach($goodResult['matching'] as $matching)
                                     <li>{{ $matching }}</li>
                                 @endforeach
                             </ul>
                             <ul>nonmatching:
-                                @foreach($goodResult['nonMatching'] as $matching)
-                                    <li>{{ $matching }}</li>
+                                @foreach($goodResult['nonMatching'] as $nonMatching)
+                                    <li>{{ $nonMatching }}</li>
+                                @endforeach
+                            </ul>
+                            <ul>missing:
+                                @foreach($goodResult['missingVegiesForRecipe'] as $missing)
+                                    <li>{{ $missing }}</li>
                                 @endforeach
                             </ul>
                         </div>
@@ -72,16 +80,24 @@
                 @if($junk)
                     @foreach($junk as $junkResult)
                         <div class="panel-body">
+                            <span style="text-align:center;"><a href="/details/recette/{{ $junkResult['id'] }}"><i class="fa fa-info-circle detailsRecipe" aria-hidden="true"></i></a></span>
                             {{ $junkResult['name'] }}
                             <br>
+                            @if ($junkResult['matching'])
                             <ul>matching:
                                 @foreach($junkResult['matching'] as $matching)
                                     <li>{{ $matching }}</li>
                                 @endforeach
                             </ul>
+                            @endif
                             <ul>nonmatching:
-                                @foreach($junkResult['missingVegiesForRecipe'] as $matching)
-                                    <li>{{ $matching }}</li>
+                                @foreach($junkResult['nonMatching'] as $nonMatching)
+                                    <li>{{ $nonMatching }}</li>
+                                @endforeach
+                            </ul>
+                            <ul>missing:
+                                @foreach($junkResult['missingVegiesForRecipe'] as $missing)
+                                    <li>{{ $missing }}</li>
                                 @endforeach
                             </ul>
                         </div>
