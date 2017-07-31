@@ -68,11 +68,12 @@
     justify-content: center;
 }
 
-.preview1>#horizontalTitle {
+#horizontalTitle {
     text-align: center;
     font-size: 50px;
     font-weight: bold;
     display: block;
+    text-shadow: -1px 0 #563d38, 0 1px #563d38, 1px 0 #563d38, 0 -1px #563d38;
 }
 
 .preview2 {
@@ -89,12 +90,6 @@
     align-items: center;
 }
 
-.preview2>#horizontalTitle {
-    text-align: center;
-    font-size: 50px;
-    font-weight: bold;
-    display: block;
-}
 
 .preview3 {
     background: linear-gradient(rgba(63,91,103, .7), rgba(63,91,103, .7)),url('https://static.pexels.com/photos/89267/pexels-photo-89267.jpeg') no-repeat center center ;
@@ -108,12 +103,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.preview3>#horizontalTitle {
-    text-align: center;
-    font-size: 50px;
-    font-weight: bold;
 }
 
 
