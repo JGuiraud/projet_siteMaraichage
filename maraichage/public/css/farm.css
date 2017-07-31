@@ -1,0 +1,11 @@
+img {
+    margin: 1%;
+}
+
+.row {
+    display: flex;
+}
+
+p {
+    text-align: justify;
+}

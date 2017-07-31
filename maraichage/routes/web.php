@@ -1,8 +1,9 @@
 <?php
 
 
+
 /*
----------------------------------------------------------
+--------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -13,7 +14,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 }
 );
 
@@ -44,3 +45,6 @@ Route::get('/selectionPanier', 'VegetableController@selectBasket');
 Route::get('/marches', 'MarketsController@getMarket');
 Route::get('/supprimer/marche/{id}', 'MarketsController@destroyMarket');
 Route::post('/nouveau/marche/', 'MarketsController@createMarket')->name('createMarket');
+
+// Farm
+Route::get('/exploitation', 'FarmController@index');
