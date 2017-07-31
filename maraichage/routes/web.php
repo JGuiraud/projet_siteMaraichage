@@ -2,8 +2,9 @@
 
 
 
+
 /*
---------------------------------------------------------
+-------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -47,4 +48,7 @@ Route::get('/supprimer/marche/{id}', 'MarketsController@destroyMarket');
 Route::post('/nouveau/marche/', 'MarketsController@createMarket')->name('createMarket');
 
 // Farm
-Route::get('/exploitation', 'FarmController@index');
+Route::get('/exploitation', function () {
+	return view('farm');
+}
+);

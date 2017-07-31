@@ -3,9 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <!-- <a href="#" class="thumbnail"> -->
             <img src="https://unsplash.it/350" alt="">
-            <!-- </a> -->
         </div>
         <div class="col-md-6">
             <p>Bienvenue aux Jardins de Riton !<br> Passionné de potager depuis quelques années, j’ai décidé en 2018 d’en faire mon métier : devenir maraîcher !<br> Variété ancienne, agro écologie, pratique du sol vivant, mon exploitation certifiée Agriculture
@@ -17,11 +15,6 @@
     <div class="row">
         <div class="col-md-12" >
             <div id="instafeed"></div>
-            <!-- <div class="panel panel-default">
-                <div class="panel-heading">Mon exploitation</div>
-                <div class="panel-body">
-                </div>
-            </div> -->
         </div>
     </div>
 </div>
