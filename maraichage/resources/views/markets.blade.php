@@ -59,11 +59,11 @@
                                     </a>
                                     @endif
                                 </td>
-                                 <td class="market_id" hidden>{{ $market->id }}</td> 
+                                <td class="market_id" hidden>{{ $market->id }}</td> 
                                 <td class="market_city">{{ $market->city }}</td>
-                                    <td class="market_latitude" hidden>{{ $market->latitude }}</td>
-                                    <td class="market_longitude" hidden>{{ $market->longitude }}</td>
-                                    <td class="market_details" hidden>{{ $market->details }}</td>
+                                <td class="market_latitude" hidden>{{ $market->latitude }}</td>
+                                <td class="market_longitude" hidden>{{ $market->longitude }}</td>
+                                <td class="market_details" hidden>{{ $market->details }}</td>
                                 <td>{{ $market->details }}</td>
                             </tr>
                             @endforeach

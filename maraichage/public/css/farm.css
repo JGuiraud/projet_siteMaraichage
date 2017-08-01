@@ -1,11 +1,3 @@
-body {
-    background-image: url('../img/field-2168030_1920.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position-x: -250px;
-    background-position-y: -100px;
-}
-
 .animation>img {
     margin: 0.25vw;
 }
