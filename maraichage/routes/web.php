@@ -1,8 +1,10 @@
 <?php
 
 
+
+
 /*
----------------------------------------------------------
+-------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -52,3 +54,8 @@ Route::group(['middleware'=>'admin'], function () {
 
 //landing
 Route::get('/index', 'LandingController@index');
+// Farm
+Route::get('/exploitation', function () {
+    return view('farm');
+}
+);

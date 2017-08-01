@@ -1,0 +1,21 @@
+.animation>img {
+    margin: 0.25vw;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 5%;
+}
+
+p {
+    text-align: justify;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#instafeed {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
