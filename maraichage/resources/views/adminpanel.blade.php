@@ -28,7 +28,7 @@
                         </div>
                         <div class="textmenu"><span>MES MARCHÉS</span></div>
                     </a>
-                    <a href="/" target="_blank" class="">
+                    <a href="/index" target="_blank" class="">
                         <i class="fa fa-eye fa-5x eye" aria-hidden="true"></i>
                     </a>
                 </div>
