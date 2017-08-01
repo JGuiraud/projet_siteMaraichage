@@ -35,6 +35,9 @@ class BasketsController extends Controller
      */
     public function suggestRecipes(Request $request)
     {
+        function c($x){
+            return count($x);
+        }
         // Sort of basket in alphabetical order and with new keys associated
         $basketVegies = array_sort($request->vegies, function ($value) {
             return $value;
@@ -47,7 +50,7 @@ class BasketsController extends Controller
         // Sort vegies in their respective recipe
         $recipes = Recipe::all();
         $recipesVegies = [];
-        for ($i = 0; $i < count($recipes); $i++) {
+        for ($i = 0; $i < c($recipes); $i++) {
             $recipeVegies = array_sort(json_decode($recipes[$i]->vegetables_names), function ($value) {
                 return $value;
             });
@@ -85,22 +88,29 @@ class BasketsController extends Controller
                 'matching' => $matchingVegies,
                 'nonMatching' => $nonMatchingVegies
             ];
-
-            if (count($matchingVegies) === count($recette) && count($nonMatchingVegies)<1) {
+            if (c($matchingVegies) === c($recette) && c($nonMatchingVegies)<1) {
                 $bestOnes[] = $result;
-            // } else if (count($matchingVegies) === count($sortedBasketVegies)) {
-            } else if (count($nonMatchingVegies) < 2 || count($recetteTemp) < 2) {
+            // } else if (c($matchingVegies) === c($sortedBasketVegies)) {
+            } else if ((c($matchingVegies) === c($recette)-1 || c($matchingVegies) === c($recette)) && (c($recetteTemp) < 2 || c($nonMatchingVegies)<2)) {
                 $goodOnes[] = $result;
-            } else if (count($matchingVegies) > 0) {
-                $junk[] = $result;
+            } else {
+                if (c($matchingVegies) > 0) {
+                    $junk[] = $result;
+                }
             }
             // FIN
         }
         uasort($junk, function ($a, $b) {
-            if (count($a['matching']) == count($b['matching'])) {
+            if (c($a['matching']) == c($b['matching'])) {
                 return 0;
             }
-            return (count($a['matching']) > count($b['matching'])) ? -1 : 1;
+            return (c($a['matching']) > c($b['matching'])) ? -1 : 1;
+        });
+        uasort($goodOnes, function ($a, $b) {
+            if (c($a['matching']) == c($b['matching'])) {
+                return 0;
+            }
+            return (c($a['matching']) > c($b['matching'])) ? -1 : 1;
         });
         return view('suggestRecipes', compact('bestOnes', 'goodOnes', 'junk'));
     }

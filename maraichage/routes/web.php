@@ -45,3 +45,9 @@ Route::get('/suggestion/recettes', 'BasketsController@suggestRecipes');
 Route::get('/marches', 'MarketsController@getMarket');
 Route::get('/supprimer/marche/{id}', 'MarketsController@destroyMarket');
 Route::post('/nouveau/marche/', 'MarketsController@createMarket')->name('createMarket');
+
+// mise en avant recette et panier
+Route::get('/miseEnAvant/recette/{id}', 'RecipesController@showCase');
+
+//front
+Route::get('/suggestionDuMarai', 'RecipesController@displayFront');

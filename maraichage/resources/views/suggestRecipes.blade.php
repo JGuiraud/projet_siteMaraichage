@@ -6,9 +6,11 @@
 <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="retour">
+                <a href='/selectionPanier' class="btn btn-primary">Retour</a>
                 <a href="/admin" class="btn btn-danger"><i class="fa fa-backward" aria-hidden="true"></i>
                 Retour Menu</a>
             </div>
+            
 			<h3>Suggestions</h3>
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -30,10 +32,10 @@
                         </div>
                     @endforeach
                 @else
-                <div class="panel-body">
-                    Pas de suggestions pour cette catégorie.
-                    <br>
-                </div>
+                    <div class="panel-body">
+                        Pas de suggestions pour cette catégorie.
+                        <br>
+                    </div>
                 @endif
             </div>
 
@@ -47,22 +49,25 @@
                         <span style="text-align:center;"><a href="/details/recette/{{ $goodResult['id'] }}"><i class="fa fa-info-circle detailsRecipe" aria-hidden="true"></i></a></span>
                             {{ $goodResult['name'] }}
                             <br>
-
-                            <ul>matching:
+                            <ul>Matching:
                                 @foreach($goodResult['matching'] as $matching)
                                     <li>{{ $matching }}</li>
                                 @endforeach
                             </ul>
-                            <ul>nonmatching:
-                                @foreach($goodResult['nonMatching'] as $nonMatching)
-                                    <li>{{ $nonMatching }}</li>
-                                @endforeach
-                            </ul>
-                            <ul>missing:
+                            @if($goodResult['missingVegiesForRecipe'])
+                            <ul>Manquant:
                                 @foreach($goodResult['missingVegiesForRecipe'] as $missing)
                                     <li>{{ $missing }}</li>
                                 @endforeach
                             </ul>
+                            @endif
+                            @if($goodResult['nonMatching'])
+                            <ul>En trop:
+                                @foreach($goodResult['nonMatching'] as $nonMatching)
+                                    <li>{{ $nonMatching }}</li>
+                                @endforeach
+                            </ul>
+                            @endif
                         </div>
                     @endforeach
                 @else
@@ -84,18 +89,18 @@
                             {{ $junkResult['name'] }}
                             <br>
                             @if ($junkResult['matching'])
-                            <ul>matching:
+                            <ul>Matching:
                                 @foreach($junkResult['matching'] as $matching)
                                     <li>{{ $matching }}</li>
                                 @endforeach
                             </ul>
                             @endif
-                            <ul>nonmatching:
+                            <ul>En trop:
                                 @foreach($junkResult['nonMatching'] as $nonMatching)
                                     <li>{{ $nonMatching }}</li>
                                 @endforeach
                             </ul>
-                            <ul>missing:
+                            <ul>Manquant:
                                 @foreach($junkResult['missingVegiesForRecipe'] as $missing)
                                     <li>{{ $missing }}</li>
                                 @endforeach
