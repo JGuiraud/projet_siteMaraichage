@@ -37,7 +37,7 @@ $(document).ready(function() {
         }
     });
 
-    var map, myLatLng, markers_markets, market_details;
+    var map, myLatLng, markers_markets;
 
 
     function geolocation() {
@@ -69,7 +69,7 @@ $(document).ready(function() {
                     title: city[i],
                     icon: "http://maps.google.com/mapfiles/marker.png"
                 });
-                markets_details = new google.maps.InfoWindow({
+                var markets_details = new google.maps.InfoWindow({
                     content: '<h5>Marché de: ' +
                         city[i] +
                         '</h5><hr>' +
@@ -86,7 +86,7 @@ $(document).ready(function() {
                     title: city[i],
                     icon: "http://maps.google.com/mapfiles/marker_green.png"
                 });
-                markets_details = new google.maps.InfoWindow({
+                var markets_details = new google.maps.InfoWindow({
                     content: '<h5>' +
                         city[i] +
                         '</h5><hr>' +
