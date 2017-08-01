@@ -4,20 +4,24 @@
 @endsection
 @section('content')
 <div class="container">
-    <div class="hidden" hidden>
-    @foreach ($markets as $market)
-        <input class="market_id" hidden>{{ $market->id }} />
-        <input class="market_city" hidden>{{ $market->city }} />
-        <input class="market_latitude" hidden>{{ $market->latitude }} />
-        <input class="market_longitude" hidden>{{ $market->longitude }} />
-        <input class="market_details" hidden>{{ $market->details }} />
-    @endforeach
-    </div>
+    <table hidden>
+        <tbody>
+            @foreach ($markets as $market)
+            <tr>
+                <td class="market_id" hidden>{{ $market->id }}</td>
+                <td class="market_city">{{ $market->city }}</td>
+                <td class="market_latitude" hidden>{{ $market->latitude }}</td>
+                <td class="market_longitude" hidden>{{ $market->longitude }}</td>
+                <td class="market_details" hidden>{{ $market->details }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
     <div id="map">
     </div>
 </div>
 @endsection
 @section('js')
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7EtFbAhBZWZMCI_9OaOpLNPkjVRcKlGU&libraries=places&callback=initMap" async defer></script>
-    <script src="{{ asset('js/map.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7EtFbAhBZWZMCI_9OaOpLNPkjVRcKlGU" async defer></script>
+    <script src="{{ asset('js/stand.js') }}"></script>
 @endsection
