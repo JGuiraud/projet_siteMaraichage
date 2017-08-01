@@ -1,21 +1,96 @@
-.animation>img {
-    margin: 0.25vw;
+.containerPage {
+    width: 90%;
 }
 
-.row {
+.imgExploit {
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 5vh;
+}
+
+.instaContainer {
+    height: auto;
+    padding-top: 4vh;
+    padding-bottom: 5vh;
+    padding-left: 0;
+    padding-right: 0;
+    ;
+}
+
+.imgAndText {
     display: flex;
-    margin-bottom: 5%;
+    align-items: center;
 }
 
-p {
+.imgAndText>img {
+    width: 50%;
+    height: 100%;
+    padding: 0;
+}
+
+.imgAndText>p {
+    width: 50%;
+    font-size: 1.2em;
+    padding-left: 3vw;
     text-align: justify;
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
+    margin: 0;
 }
 
 #instafeed {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
+    justify-content: center;
+    justify-content: space-between;
+    align-content: space-between;
+    /* align-items: flex-end; */
+}
+
+.animation>img {
+    padding-bottom: 1vh;
+}
+
+@media only screen and (max-width: 450px) {
+    #instafeed {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* justify-content: space-between; */
+    }
+    .animation {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        height: 50%;
+    }
+    .animation>img {
+        display: flex;
+        /* justify-content: center; */
+        width: 90%;
+        height: 90%;
+        /* padding: 1vh; */
+        margin-bottom: 1vh;
+        padding-bottom: 0;
+    }
+    .containerPage>h3 {
+        text-align: center;
+        margin-top: 0;
+    }
+    .imgAndText {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .imgAndText>img {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+    .imgAndText>p {
+        width: 100%;
+        font-size: 1em;
+        text-align: justify;
+        padding-left: 0;
+        padding-top: 3vh;
+        margin: 0;
+    }
 }

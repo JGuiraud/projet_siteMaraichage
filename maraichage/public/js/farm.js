@@ -1,5 +1,3 @@
-console.log('farm ok');
-
 var userFeed = new Instafeed({
     get: 'user',
     sortBy: 'most-recent',
