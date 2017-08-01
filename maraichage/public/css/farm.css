@@ -1,6 +1,5 @@
 .containerPage {
     width: 90%;
-    /* padding-top: 4%; */
 }
 
 .imgExploit {
@@ -36,15 +35,6 @@
     text-align: justify;
     margin: 0;
 }
-
-
-/*
-.containerPage>img p {
-    text-align: justify;
-    color: white;
-    font-size: 2vh;
-    font-weight: bold;
-} */
 
 #instafeed {
     display: flex;
