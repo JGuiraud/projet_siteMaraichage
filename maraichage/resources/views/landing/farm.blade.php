@@ -1,5 +1,4 @@
-
-        <link href="{{ asset('css/farm.css') }}" rel="stylesheet">
+<link href="{{ asset('css/farm.css') }}" rel="stylesheet">
 
 <div class="containerPage">
 <h3>Bienvenue aux Jardins de Riton !</h3>

@@ -16,12 +16,18 @@
     </div>
   </section>
 
-  <section class="menu" id="markets" style="background: rgb(105,80,101);">
+  <section class="menu" id="markets" style="background: rgb(105,80,101)">
     <div class="preview2"><h1 id="horizontalTitle">Les marchés</h1><h1 id="verticalTitle">marchés</h1></div>
     <h2 class="name">Les marchés</h2>
     <div class="flexReceiver">
-      <div class="containerSection"></div>
-    </div>
+      <div class="containerSection">
+
+            @include('landing.stand', compact('markets'))
+
+
+      </div>
+      </div>
+
   </section>
 
   <section class="menu" id="farm" style="background: #3F5B67;">
@@ -30,10 +36,14 @@
     <div class="flexReceiver">
       <div class="containerSection">
         {{--  <a href="/login">Admin</a>  --}}
-        @include('landing.farm')
+        @include('landing.farm');
       </div>
     </div>
   </section>
 </div>
+@endsection
+@section('js')
+    {{--  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7EtFbAhBZWZMCI_9OaOpLNPkjVRcKlGU" async defer></script>  --}}
+    {{--  <script src="{{ asset('js/stand.js') }}"></script>  --}}
 
 @endsection

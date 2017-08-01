@@ -25,9 +25,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
     {{--  <script src="{{ asset('js/app.js') }}"></script>  --}}
     <script src="{{ asset('js/custom.js') }}"></script>
-    <script src="{{ asset('js/landingPage.js') }}"></script>
 
     @yield('js')
+    <script src="{{ asset('js/landingPage.js') }}"></script>
 
 
 </body>

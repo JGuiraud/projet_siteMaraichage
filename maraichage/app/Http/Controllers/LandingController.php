@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Market;
+use App\Vegetable;
 
 class LandingController extends Controller
 {
@@ -13,7 +15,9 @@ class LandingController extends Controller
      */
     public function index()
     {
-        return view('landingAccordion');
+        $markets = Market::All();
+        $vegies = Vegetable::All();
+        return view('landingAccordion', compact('markets', 'vegies'));
     }
 
     /**

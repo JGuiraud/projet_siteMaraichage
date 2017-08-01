@@ -3,7 +3,6 @@ $('.preview2 #verticalTitle').hide();
 $('.preview3 #verticalTitle').hide();
 
 $(document).ready(function () {
-
     var timer;
     var delay = 200;
     $("#suggestions").hover(function () {

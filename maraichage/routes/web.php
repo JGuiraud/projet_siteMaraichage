@@ -59,5 +59,4 @@ Route::get('/exploitation', function () {
 );
 
 // Map
-Route::get('/stand', 'MarketsController@show');
-
+// Route::get('/stand', 'MarketsController@show');
