@@ -28,7 +28,9 @@
     <div class="preview3"><h1 id="horizontalTitle">L'exploitation</h1><h1 id="verticalTitle">exploitation</h1></div>
     <h2 class="name">L'exploitation</h2>
     <div class="flexReceiver">
-      <div class="containerSection"></div>
+      <div class="containerSection">
+        <a href="/login">Admin</a>
+      </div>
     </div>
 
 
