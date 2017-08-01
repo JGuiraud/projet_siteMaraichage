@@ -44,7 +44,7 @@ $(document).ready(function () {
         // geocoding principal garden
         myLatLng = {
             lat: parseFloat(latitude[0]),
-            lng: parseFloat(longitude[0])
+            lng: parseFloat(longitude[0]) - 0.7
         };
 
         // create a map object and specify the DOM element for display center on principal garden
@@ -111,9 +111,7 @@ $(document).ready(function () {
         });
 
         setInterval(function () {
-            console.log('resize div');
             google.maps.event.trigger(map, "resize");
-            // map.setCenter(myLatLng);
         }, 1000);
 
 

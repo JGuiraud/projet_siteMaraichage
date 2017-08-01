@@ -24,7 +24,7 @@
 					<form action='/suggestion/recettes' method="get" class="form-horizontal" id="formBasket">
 						{{ csrf_field() }}
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="searchVegie">Nom</label>
+							<label class="control-label col-sm-2" for="searchVegie">Chercher <br> un légume</label>
 							<div class="col-sm-10">
 								<input id="searchVegie" type="search" name="name" class="form-control">
 							</div>

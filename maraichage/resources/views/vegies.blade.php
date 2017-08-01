@@ -16,7 +16,7 @@
 					<form id="vegieForm" action="/legumes/create" method="post" class="form-horizontal">
 						{{ csrf_field() }}
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="addVegie">Nom</label>
+							<label class="control-label col-sm-2" for="addVegie">Nommer</label>
 
 							<div class="col-sm-10">
 								<input id="addVegie" type="text" name="name" class="form-control" required>
