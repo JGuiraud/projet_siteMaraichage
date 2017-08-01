@@ -157,6 +157,8 @@ class RecipesController extends Controller
         $ingredients_quantities = json_decode($recipe->ingredients_quantity);
         $recipe_text = html_entity_decode($recipe->recipe_text);
 
+        return view('detailRecipe', compact('recipe', 'vegies', 'vegies_quantities', 'ingredients', 'ingredients_quantities', 'recipe_text', 'id'));
+
         return view('detailRecipe',
         ['recipe'=>$recipe,
         'vegies'=>$vegies,
@@ -167,10 +169,24 @@ class RecipesController extends Controller
         ]);
     }
 
+    public function showCase($id)
+    {
+        $frontRecipe = Recipe::all()->where('front_view', '=', '1')->first();
+
+        $frontRecipe->front_view = '0';
+        $frontRecipe->update();
+
+        $idRecipe = Recipe::all()->where('id', '=', $id)->first();
+        $idRecipe->front_view = 1;
+        $idRecipe->update();
+        return redirect()->back();
+    }
+
     public function newRecipePart1()
     {
         return view('newRecipePart1');
     }
+
     public function newRecipePart2()
     {
         return view('newRecipePart2');

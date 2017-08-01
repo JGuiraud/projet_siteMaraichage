@@ -48,15 +48,22 @@ Route::group(['middleware'=>'admin'], function () {
     Route::post('/nouveau/marche/', 'MarketsController@createMarket')->name('createMarket');
 });
 
-
-
 //landing
 Route::get('/index', 'LandingController@index');
+//recettes
+Route::get('/miseEnAvant/recette/{id}', 'RecipesController@showCase');
+
+//front
+Route::get('/suggestionDuMarai', 'RecipesController@displayFront');
+
 // Farm
-Route::get('/exploitation', function () {
-    return view('farm');
-}
-);
+// Route::get('/exploitation', function () {
+//     return view('farm');
+// }
+// );
 
 // Map
 // Route::get('/stand', 'MarketsController@show');
+
+
+// mise en avant recette et panier

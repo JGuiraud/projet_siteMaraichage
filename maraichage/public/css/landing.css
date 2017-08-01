@@ -102,6 +102,10 @@
     height: auto;
 }
 
+#markets .flexReceiver {
+    width: 100%;
+}
+
 .menu:hover {
     -ms-flex-preferred-size: 10em;
     flex-basis: 100em;

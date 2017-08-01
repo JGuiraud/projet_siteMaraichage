@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Market;
 use App\Vegetable;
+use App\Recipe;
 
 class LandingController extends Controller
 {
@@ -16,8 +17,12 @@ class LandingController extends Controller
     public function index()
     {
         $markets = Market::All();
-        $vegies = Vegetable::All();
-        return view('landingAccordion', compact('markets', 'vegies'));
+        $frontRecipe = Recipe::all()->where('front_view', '=', '1')->first();
+        $vegies = json_decode($frontRecipe->vegetables_names);
+        $ingredients = json_decode($frontRecipe->ingredients);
+        $recipe_text = $frontRecipe->recipe_text;
+
+        return view('landingAccordion', compact('markets', 'vegies', 'ingredients', 'recipe_text'));
     }
 
     /**

@@ -2,3 +2,14 @@
     height: 80vh;
     width: 100%;
 }
+
+.containerSection .container {
+    height: 100%;
+}
+
+@media only screen and (max-width: 450px) {
+    #map {
+        width: auto;
+        height: auto;
+    }
+}
