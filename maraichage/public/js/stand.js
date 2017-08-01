@@ -38,7 +38,7 @@ $(document).ready(function() {
     });
 
     var map, myLatLng, markers_markets;
-
+    var winWidth = $(window).width();
 
     function geolocation() {
         // geocoding principal garden
@@ -48,13 +48,23 @@ $(document).ready(function() {
         };
 
         // create a map object and specify the DOM element for display center on principal garden
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: myLatLng,
-            scrollwheel: false,
-            zoom: 9,
-            maxZoom: 12,
-            minZoom: 9
-        });
+        if (winWidth <= 360) {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                scrollwheel: false,
+                zoom: 10,
+                maxZoom: 12,
+                minZoom: 9
+            });
+        } else {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                scrollwheel: false,
+                zoom: 9,
+                maxZoom: 12,
+                minZoom: 9
+            });
+        }
         // create all markets markers with infowindow
         $(id).each(function(i) {
             var markets_LatLng = {
