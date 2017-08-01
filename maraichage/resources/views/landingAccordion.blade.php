@@ -29,11 +29,10 @@
     <h2 class="name">L'exploitation</h2>
     <div class="flexReceiver">
       <div class="containerSection">
-        <a href="/login">Admin</a>
+        {{--  <a href="/login">Admin</a>  --}}
+        @include('landing.farm')
       </div>
     </div>
-
-
   </section>
 </div>
 

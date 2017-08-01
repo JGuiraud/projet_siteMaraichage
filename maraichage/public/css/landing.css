@@ -97,6 +97,11 @@
     transition: flex-basis 300ms ease-in-out, -webkit-flex-basis 300ms ease-in-out, -ms-flex-preferred-size 300ms ease-in-out;
 }
 
+.flexReceiver {
+    overflow: scroll;
+    height: auto;
+}
+
 .menu:hover {
     -ms-flex-preferred-size: 10em;
     flex-basis: 100em;
@@ -134,6 +139,8 @@
 }
 
 .containerSection {
+    display: flex;
+    justify-content: center;
     /* background: grey; */
     height: 95%;
     width: 95%;
