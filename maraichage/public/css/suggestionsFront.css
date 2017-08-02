@@ -10,7 +10,7 @@
     }
 
     .basket {
-        height: 89%;
+        height: 85%;
         width: 15%;
         background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('../img/basket.jpg') no-repeat center center;
         background-size: cover;
