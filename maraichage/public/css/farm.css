@@ -14,7 +14,6 @@
     padding-bottom: 5vh;
     padding-left: 0;
     padding-right: 0;
-    ;
 }
 
 .imgAndText {
@@ -49,7 +48,42 @@
     padding-bottom: 1vh;
 }
 
-.farm_leftImage {}
+.farm_leftImage {
+    height: 89%;
+    width: 15%;
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('../img/field.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+}
+
+.farm_leftImage>i {
+    padding-top: .4em;
+}
+
+.fa-pagelines {
+    font-size: 7em;
+    color: rgba(255, 255, 255, .8);
+}
+
+@media only screen and (max-width: 780px) {
+    .farm_leftImage {
+        height: 30%;
+        width: 100%;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        position: static;
+        align-items: center;
+    }
+    .textPres {
+        padding: 0;
+    }
+    .farm_rightSection {
+        padding: 0;
+    }
+}
 
 @media only screen and (max-width: 450px) {
     #instafeed {
@@ -94,5 +128,29 @@
         padding-left: 0;
         padding-top: 3vh;
         margin: 0;
+    }
+    .farm_leftImage {
+        height: 30%;
+        width: 100%;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        position: static;
+        align-items: center;
+    }
+    .farm_leftImage>i {
+        padding-top: 0em;
+    }
+    .farm_leftImage>i.fa {
+        font-size: 5em;
+    }
+    .textPres {
+        padding: 0;
+    }
+    .farm_rightSection {
+        padding: 0;
+    }
+    .fa-pagelines {
+        padding: 0;
     }
 }

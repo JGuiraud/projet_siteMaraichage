@@ -1,10 +1,10 @@
     <link href="{{ asset('css/suggestionsFront.css') }}" rel="stylesheet">
 
-<div class="suggestionPage container">
+<div class="suggestionPage">
     <div class="basket col-sm-3">
-        <i class="fa fa-cutlery fa-5x" aria-hidden="true"></i>
+        <i class="fa fa-cutlery" aria-hidden="true"></i>
     </div>
-    <div class="recipe col-sm-9">
+    <div class="recipe col-sm-9 col-sm-offset-3">
         <div id="mini_title">Recette du moment / </div>
         <div class="title_recipe">{{$title_recipe}}</div>
         <div class="container_ingredients">

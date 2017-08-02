@@ -6,19 +6,21 @@
     .recipe {
         height: auto;
         /* background: rgba(129, 38, 29, .3); */
-        padding: 0 4em 4em 4em;
+        padding: 0 0em 4em 0em;
     }
 
     .basket {
-        height: 100%;
+        height: 89%;
+        width: 15%;
         background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('../img/basket.jpg') no-repeat center center;
         background-size: cover;
         display: flex;
         justify-content: center;
+        position: fixed;
     }
 
     .basket>i {
-        padding-top: .2em;
+        padding-top: .4em;
     }
 
     .garden_ingredients {
@@ -26,7 +28,7 @@
     }
 
     .fa-cutlery {
-        font-size: 10em;
+        font-size: 7em;
         color: rgba(255, 255, 255, .8);
     }
 
@@ -89,6 +91,25 @@
         padding-bottom: 1em;
     }
 
+    @media only screen and (max-width: 780px) {
+        .basket {
+            height: 30%;
+            width: 100%;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            position: static;
+            align-items: center;
+            padding: 0;
+        }
+        .textPres {
+            padding: 0;
+        }
+        .farm_rightSection {
+            padding: 0;
+        }
+    }
+
     @media only screen and (max-width: 450px) {
         .title_basket {
             margin-top: 1em;
@@ -97,5 +118,24 @@
         .title_recipe {
             margin-top: 1em;
             margin-bottom: 1em;
+        }
+        .containerSuggestionsPage {
+            margin: 2em;
+        }
+        .basket>i {
+            padding-top: 0;
+        }
+        .basket {
+            padding: 0;
+        }
+        .basket>i.fa {
+            font-size: 5em;
+        }
+        .title_recipe {
+            margin: .5em 0 .5em 0;
+            line-height: 90%;
+        }
+        .text_recipe {
+            margin-top: .2em;
         }
     }

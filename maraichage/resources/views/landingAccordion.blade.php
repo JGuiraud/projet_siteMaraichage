@@ -13,7 +13,7 @@
     <div class="preview1"><h1 id="horizontalTitle">La suggestion du Maraicher</h1><h1 id="verticalTitle">suggestions</h1></div>
     <h1 class="name">La suggestion du Maraicher</h1>
     <div class="flexReceiver">
-      <div class="containerSection">
+      <div class="containerSection containerSuggestionsPage">
          @include('landing.displaySuggFront', compact( 'vegies', 'ingredients', 'recipe_text'))
 
       </div>
