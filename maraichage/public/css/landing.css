@@ -150,6 +150,18 @@
     width: 95%;
 }
 
+.flexReceiver::-webkit-scrollbar {
+    width: 8px;
+}
+
+.flexReceiver::-webkit-scrollbar-thumb {
+    background: rgba(105, 105, 105, .4);
+}
+
+.flexReceiver::-webkit-scrollbar-corner {
+    background: rgba(0, 0, 0, 0);
+}
+
 @media (min-width: 200px) {
     .menu-list {
         display: flex;

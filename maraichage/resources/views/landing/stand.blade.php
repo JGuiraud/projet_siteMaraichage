@@ -2,6 +2,7 @@
 
     <link href="{{ asset('css/stand.css') }}" rel="stylesheet">
 
+
 <div class="container">
     <table hidden>
         <tbody>
