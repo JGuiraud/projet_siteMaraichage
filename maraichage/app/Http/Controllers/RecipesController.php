@@ -169,14 +169,18 @@ class RecipesController extends Controller
         ]);
     }
 
-    public function showCase($id)
+    public function showCase(Request $request, $id)
     {
-        $frontRecipe = Recipe::all()->where('front_view', '=', '1')->first();
-
-        $frontRecipe->front_view = '0';
-        $frontRecipe->update();
+        // dd($request);
+        if($frontRecipe = Recipe::all()->where('front_view', '=', '1')->first()){
+            $frontRecipe->front_view = '0';
+            $frontRecipe->update();
+        }
 
         $idRecipe = Recipe::all()->where('id', '=', $id)->first();
+        $idRecipe->comment = $request->input('textBox');
+        // $idRecipe->comment = 'coucou';
+
         $idRecipe->front_view = 1;
         $idRecipe->update();
         return redirect()->back();

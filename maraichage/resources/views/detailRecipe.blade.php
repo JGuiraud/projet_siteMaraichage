@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-@section('content')
 @section('css')
 <style type="text/css" media="print">
 
@@ -8,8 +7,15 @@
     display: none;
 }
 
+textarea {
+    width: 100vw;
+    height: 100vh;
+}
+
 </style>
 @endsection
+
+@section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -19,8 +25,8 @@
             </div>
             <br>
             <div class="panel panel-default recetteAImprimer">
-                    {{ csrf_field() }}
-            
+                {{ csrf_field() }}
+
                 <div class="panel-heading">Recette : {{$recipe->title}}</div>
                 <div class="panel-body">
 
@@ -50,32 +56,42 @@
 
                     <div class="recetteText">
                         <h4>Recette : </h4>
-                        <p>{!!$recipe_text!!}</p>
+                        <p>{!! $recipe_text !!}</p>
                     </div>
                 </div>
 
                 <div class="panel-footer no-print">
                     <a id='print' class="btn btn-primary no-print"><i class="fa fa-print" aria-hidden="true"></i> Imprimer</a>
-                    <a href='/miseEnAvant/recette/{{ $id }}' class="btn btn-primary no-print" title="Cette recette prendra la place de la précédente en vitrine"><i class="fa fa-eye" aria-hidden="true"></i> En vitrine</a>
+                    <button class="btn btn-primary no-print" title="Cette recette prendra la place de la précédente en vitrine" id='modalCaller'><i class="fa fa-eye" aria-hidden="true"></i> En vitrine</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">Commentaire</h3>
+            </div>
+            <div class="modal-body">
+                <form method="POST" id="modalform" action='/miseEnAvant/recette/{{ $id }}' >
+                    {{ csrf_field() }}
+                    <textarea name="textBox" id="textBox"></textarea>
+                </form>
+                <p>Si aucun commentaire n'est ajouté la box n'apparaîtra pas.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id='modalSubmit' >Valider</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id='modalCancel' >Annuler</button>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
 
 @section('js')
-<script>
-
-    $('#print').on('click', function() {
-        window.print();
-    })
-
-    $('.stock').on('click', function(){
-        var name = $(this).attr('name');
-        $('#stockDisplay'+name).toggle();
-    })
-
-</script>
+<script src="{{ asset('js/detailRecipe.js') }}"></script>
 @endsection
