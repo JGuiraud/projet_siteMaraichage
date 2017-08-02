@@ -21,8 +21,9 @@ class LandingController extends Controller
         $vegies = json_decode($frontRecipe->vegetables_names);
         $ingredients = json_decode($frontRecipe->ingredients);
         $recipe_text = $frontRecipe->recipe_text;
+        $title_recipe = $frontRecipe->title;
 
-        return view('landingAccordion', compact('markets', 'vegies', 'ingredients', 'recipe_text'));
+        return view('landingAccordion', compact('markets', 'vegies', 'ingredients', 'recipe_text', 'title_recipe'));
     }
 
     /**
