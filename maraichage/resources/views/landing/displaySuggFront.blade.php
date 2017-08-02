@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="text_recipe">
-            <div class="title_preparation">préparations</div>
+            <div class="title_preparation">préparation</div>
             <p>{!! $recipe_text !!}</p>
         </div>
         <div class="commentaire_recipe">

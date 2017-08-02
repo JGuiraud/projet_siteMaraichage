@@ -49,6 +49,8 @@
     padding-bottom: 1vh;
 }
 
+.farm_leftImage {}
+
 @media only screen and (max-width: 450px) {
     #instafeed {
         display: flex;
