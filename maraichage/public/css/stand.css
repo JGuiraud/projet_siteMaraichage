@@ -1,19 +1,23 @@
 #map {
     height: 80vh;
     width: 100%;
+    color: rgb(105, 80, 101);
 }
 
 .containerSection .container {
     height: 100%;
 }
 
-#map {
-    color: rgb(105, 80, 101);
-}
-
 @media only screen and (max-width: 450px) {
     #map {
         width: auto;
         height: auto;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #map {
+        height: 60vh;
+        width: 80vw;
     }
 }
