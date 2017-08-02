@@ -16,60 +16,18 @@
                 <div class="panel-heading">
                 Les meilleures suggestions
                 </div>
-
-<<<<<<< HEAD
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                    Les meilleures suggestions
-                    </div>
-                    @if($bestOnes)
-                        @foreach($bestOnes as $bestResult)
-                            <div class="panel-body">
-                                {{ $bestResult['name'] }}
-                                <br>
-                            </div>
-                        @endforeach
-                    @else
-                        <div class="panel-body">
-                            Pas de suggestions pour cette catégorie.
-=======
-                {{-- {{ dd($bestOnes, $goodOnes, $junk) }} --}}
                 @if($bestOnes)
-                    @foreach($bestOnes as $bestResult)
-                        <div class="panel-body">
-                            <span style="text-align:center;"><a href="/details/recette/{{ $bestResult['id'] }}"><i class="fa fa-info-circle detailsRecipe" aria-hidden="true"></i></a></span>
-                            {{ $bestResult['name'] }}
->>>>>>> origin/_recipeSuggestions
-                            <br>
-                            <ul>matching:
-                                @foreach($bestResult['matching'] as $matching)
-                                    <li>{{ $matching }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-<<<<<<< HEAD
-                    @endif
-                </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                    Les autres suggestions
-
+                @foreach($bestOnes as $bestResult)
+                    <div class="panel-body">
+                        <span style="text-align:center;"><a href="/details/recette/{{ $bestResult['id'] }}"><i class="fa fa-info-circle detailsRecipe" aria-hidden="true"></i></a></span>
+                        {{ $bestResult['name'] }}
+                        <br>
+                        <ul>matching:
+                            @foreach($bestResult['matching'] as $matching)
+                                <li>{{ $matching }}</li>
+                            @endforeach
+                        </ul>
                     </div>
-                    @if($goodOnes)
-                        @foreach($goodOnes as $goodResult)
-                            <div class="panel-body">
-                                {{ $goodOnes['name'] }}
-                                <br>
-                            </div>
-                        @endforeach
-                    @else
-                        <div class="panel-body">
-                            Pas de suggestions pour cette catégorie.
-                            <br>
-                        </div>
-                    @endif
-=======
                     @endforeach
                 @else
                     <div class="panel-body">
@@ -78,7 +36,6 @@
                     </div>
                 @endif
             </div>
->>>>>>> origin/_recipeSuggestions
 
             <div class="panel panel-default">
                 <div class="panel-heading">

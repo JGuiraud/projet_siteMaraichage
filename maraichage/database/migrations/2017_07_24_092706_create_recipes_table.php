@@ -21,6 +21,7 @@ class CreateRecipesTable extends Migration
             $table->text('ingredients');
             $table->text('ingredients_quantity');
             $table->text('recipe_text');
+            $table->text('comment')->nullable();
             $table->boolean('front_view')->default('0');
             $table->timestamps();
         });

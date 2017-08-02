@@ -51,7 +51,7 @@ Route::group(['middleware'=>'admin'], function () {
 //landing
 Route::get('/index', 'LandingController@index');
 //recettes
-Route::get('/miseEnAvant/recette/{id}', 'RecipesController@showCase');
+Route::post('/miseEnAvant/recette/{id}', 'RecipesController@showCase');
 
 //front
 Route::get('/suggestionDuMarai', 'RecipesController@displayFront');
