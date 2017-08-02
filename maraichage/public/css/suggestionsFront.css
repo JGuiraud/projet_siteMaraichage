@@ -1,0 +1,141 @@
+    .suggestionPage {
+        height: 100%;
+        /* background: coral; */
+    }
+
+    .recipe {
+        height: auto;
+        /* background: rgba(129, 38, 29, .3); */
+        padding: 0 0em 4em 0em;
+    }
+
+    .basket {
+        height: 89%;
+        width: 15%;
+        background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('../img/basket.jpg') no-repeat center center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+    }
+
+    .basket>i {
+        padding-top: .4em;
+    }
+
+    .garden_ingredients {
+        text-align: center;
+    }
+
+    .fa-cutlery {
+        font-size: 7em;
+        color: rgba(255, 255, 255, .8);
+    }
+
+    .title_recipe {
+        font-size: 3em;
+        font-weight: bold;
+        /* margin-top: 1em; */
+        /* margin-top: 1em; */
+        /* margin-bottom: 1em; */
+        text-align: center;
+    }
+
+    #mini_title {
+        font-size: 1em;
+        text-align: center;
+        width: 100%;
+    }
+    /* .ingredients {
+        height: 100%;
+    } */
+
+    .extra_ingredients {
+        margin-top: 1em;
+        text-align: center;
+    }
+
+    .container_ingredients {
+        width: 100%;
+        display: table;
+    }
+
+    .title_ingredients {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin: 0em 0 .2em 0;
+    }
+
+    .text_recipe {
+        margin-top: 2em;
+    }
+
+    .title_preparation {
+        font-size: 2em;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: .5;
+        margin-bottom: 1em;
+        padding-top: 1em;
+    }
+
+    .commentaire_recipe {
+        padding: 1em;
+        background: rgba(42, 42, 42, .1);
+        margin-top: 2em;
+    }
+
+    .title_comment {
+        font-weight: bold;
+        font-size: 1.2em;
+        padding-bottom: 1em;
+    }
+
+    @media only screen and (max-width: 780px) {
+        .basket {
+            height: 30%;
+            width: 100%;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            position: static;
+            align-items: center;
+            padding: 0;
+        }
+        .textPres {
+            padding: 0;
+        }
+        .farm_rightSection {
+            padding: 0;
+        }
+    }
+
+    @media only screen and (max-width: 450px) {
+        .title_basket {
+            margin-top: 1em;
+            margin-bottom: .3em;
+        }
+        .title_recipe {
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+        .containerSuggestionsPage {
+            margin: 2em;
+        }
+        .basket>i {
+            padding-top: 0;
+        }
+        .basket {
+            padding: 0;
+        }
+        .basket>i.fa {
+            font-size: 5em;
+        }
+        .title_recipe {
+            margin: .5em 0 .5em 0;
+            line-height: 90%;
+        }
+        .text_recipe {
+            margin-top: .2em;
+        }
+    }

@@ -10,7 +10,7 @@
                 <a href="/admin" class="btn btn-danger"><i class="fa fa-backward" aria-hidden="true"></i>
                 Retour Menu</a>
             </div>
-            
+
 			<h3>Suggestions</h3>
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -36,7 +36,6 @@
                     </div>
                 @endif
             </div>
-
             <div class="panel panel-default">
                 <div class="panel-heading">
                 Les autres suggestions
@@ -74,7 +73,6 @@
                     <br>
                 </div>
                 @endif
-
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -115,8 +113,6 @@
         </div>
     </div>
 </div>
-
 @endsection
-
 @section('js')
 @endsection
