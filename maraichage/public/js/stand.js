@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-    console.log('stand ok');
-
     var id = [];
     $('.market_id').each(function(i) {
         id.push(($(this).text()));
@@ -39,33 +37,46 @@ $(document).ready(function() {
 
     var map, myLatLng, markers_markets;
     var winWidth = $(window).width();
+    var winHeight = $(window).height();
 
-    function geolocation() {
-        // geocoding principal garden
+    // map center screen width
+    if (winWidth > winHeight) {
+        winWidth = winHeight;
+    }
+
+    if (winWidth <= 414) {
+        myLatLng = {
+            lat: parseFloat(latitude[0]),
+            lng: parseFloat(longitude[0])
+        };
+    } else if (winWidth > 414 && winWidth <= 768) {
+        myLatLng = {
+            lat: parseFloat(latitude[0]),
+            lng: parseFloat(longitude[0]) - 0.5
+        };
+    } else if (winWidth > 768 && winWidth <= 1366) {
         myLatLng = {
             lat: parseFloat(latitude[0]),
             lng: parseFloat(longitude[0]) - 0.7
         };
+    } else if (winWidth > 1366) {
+        myLatLng = {
+            lat: parseFloat(latitude[0]),
+            lng: parseFloat(longitude[0]) - 1
+        };
+    }
 
+    function geolocation() {
         // create a map object and specify the DOM element for display center on principal garden
-        if (winWidth <= 360) {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: myLatLng,
-                scrollwheel: false,
-                zoom: 10,
-                maxZoom: 12,
-                minZoom: 9
-            });
-        } else {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: myLatLng,
-                scrollwheel: false,
-                zoom: 9,
-                maxZoom: 12,
-                minZoom: 9
-            });
-        }
-        // create all markets markers with infowindow
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: myLatLng,
+            scrollwheel: false,
+            zoom: 9,
+            maxZoom: 12,
+            minZoom: 9
+        });
+
+        // create all markets markers and details with infowindow
         $(id).each(function(i) {
             var markets_LatLng = {
                 lat: parseFloat(latitude[i]),
@@ -120,10 +131,9 @@ $(document).ready(function() {
             });
         });
 
+        // resize map screen
         setInterval(function() {
             google.maps.event.trigger(map, "resize");
         }, 1000);
-
-
     }
 });
