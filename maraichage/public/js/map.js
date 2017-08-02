@@ -1,6 +1,4 @@
 function initMap() {
-    console.log('initMap ok');
-
     // load all markets city register
     var id = [];
     $('.market_id').each(function(i) {

@@ -22,6 +22,11 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
+    protected function showRegistrationForm()
+    {
+        return redirect()->to('login')->with('warning', 'Registration is disabled.');
+    }
+
     /**
      * Where to redirect users after registration.
      *
