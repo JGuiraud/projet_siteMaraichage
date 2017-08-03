@@ -52,18 +52,5 @@ Route::group(['middleware'=>'admin'], function () {
 Route::get('/index', 'LandingController@index');
 //recettes
 Route::post('/miseEnAvant/recette/{id}', 'RecipesController@showCase');
-
 //front
-Route::get('/suggestionDuMarai', 'RecipesController@displayFront');
-
-// Farm
-// Route::get('/exploitation', function () {
-//     return view('farm');
-// }
-// );
-
-// Map
-// Route::get('/stand', 'MarketsController@show');
-
-
-// mise en avant recette et panier
+// Route::get('/suggestionDuMarai', 'RecipesController@displayFront');

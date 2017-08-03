@@ -1,7 +1,7 @@
 @extends('layouts.landingPage')
 
 @section('css')
-        {{--  <link href="{{ asset('css/admin.css') }}" rel="stylesheet">  --}}
+         {{--  <link href="{{ asset('css/admin.css') }}" rel="stylesheet">   --}}
 
 @endsection
 @section('content')
@@ -14,10 +14,16 @@
     <h1 class="name">La suggestion du Maraicher</h1>
     <div class="flexReceiver">
       <div class="containerSection containerSuggestionsPage">
-         @include('landing.displaySuggFront', compact( 'vegies', 'ingredients', 'recipe_text'))
+
+        @include('landing.displaySuggFront', compact( 'vegies', 'ingredients', 'recipe_text'))
 
       </div>
     </div>
+      <div class="minifooter">
+
+      @include('landing.minifooter')
+
+     </div>
   </section>
 
   <section class="menu" id="markets" style="background: rgb(105,80,101)">
@@ -26,12 +32,15 @@
     <div class="flexReceiver">
       <div class="containerSection">
 
-            @include('landing.stand', compact('markets'))
-
+        @include('landing.stand', compact('markets'))
 
       </div>
-      </div>
+     </div>
+           <div class="minifooter">
 
+      @include('landing.minifooter')
+
+    </div>
   </section>
 
   <section class="menu" id="farm" style="background: #3F5B67;">
@@ -39,15 +48,17 @@
     <h2 class="name">L'exploitation</h2>
     <div class="flexReceiver">
       <div class="containerSection">
-        {{--  <a href="/login">Admin</a>  --}}
+
         @include('landing.farm')
+
       </div>
     </div>
-  </section>
-</div>
-@endsection
-@section('js')
-     {{--  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7EtFbAhBZWZMCI_9OaOpLNPkjVRcKlGU" async defer></script>  --}}
-    {{--  <script src="{{ asset('js/stand.js') }}"></script>  --}}
+     <div class="minifooter">
 
+      @include('landing.minifooter')
+
+     </div>
+  </section>
+
+</div>
 @endsection
