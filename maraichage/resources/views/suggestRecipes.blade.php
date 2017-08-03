@@ -1,11 +1,12 @@
 @extends('layouts.app') @section('content')
 
 <div class="container">
-    <div>
+    <div class="row">
+    <div class="col-md-8 col-md-offset-2">
         <div class="retour">
             <a href='/selectionPanier' class="btn btn-primary">Retour</a>
             <a href="/admin" class="btn btn-danger"><i class="fa fa-backward" aria-hidden="true"></i>
-                Retour Menu</a>
+                Annuler et retour Menu</a>
         </div>
         <h3>Suggestions</h3>
 
@@ -18,7 +19,7 @@
                     <span style="text-align:center;"><a href="/details/recette/{{ $bestResult['id'] }}"><i class="fa fa-info-circle detailsRecipe" aria-hidden="true"></i></a></span>
                     <b>{{ $bestResult['name'] }}</b>
                     <br>
-                    <li>Correspondent : @foreach($bestResult['matching'] as $matching) {{ $matching }} @endforeach
+                    <li><u>Correspondent</u> : @foreach($bestResult['matching'] as $matching) {{ $matching }} @endforeach
                     </li>
                     @endforeach
                 </div>
@@ -96,6 +97,10 @@
             </div>
         </div>
     </div>
+    </div>
+
 </div>
 
-@endsection @section('js') @endsection
+@endsection
+@section('js')
+@endsection

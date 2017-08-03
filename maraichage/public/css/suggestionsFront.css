@@ -5,6 +5,7 @@
 
     .recipe {
         height: auto;
+        width: auto;
         /* background: rgba(129, 38, 29, .3); */
         padding: 0 0em 4em 0em;
     }
@@ -120,7 +121,7 @@
             margin-bottom: 1em;
         }
         .containerSuggestionsPage {
-            margin: 2em;
+            margin: 0em;
         }
         .basket>i {
             padding-top: 0;

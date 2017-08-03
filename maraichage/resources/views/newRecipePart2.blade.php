@@ -6,12 +6,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="retour">
-                <a href="/nouvelle/recette/part1" class="btn btn-primary"><i class="fa fa-backward" aria-hidden="true"></i> Retour au panier</a>
-                <a href="/admin" class="btn btn-danger annulerRecette">Annuler et retour menu</a>
+                <a href="/nouvelle/recette/part1" class="btn btn-primary"> Retour</a>
+                <a href="/admin" class="btn btn-danger annulerRecette"><i class="fa fa-backward" aria-hidden="true"></i> Annuler et retour Menu</a>
             </div>
-
-
-
         <br>
             <div class="panel panel-default">
 
