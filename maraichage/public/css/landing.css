@@ -13,7 +13,7 @@
 }
 
 .preview1 {
-    background: linear-gradient(rgba(220, 130, 130, .7), rgba(220, 130, 130, .7)), url('https://static.pexels.com/photos/36740/vegetables-vegetable-basket-harvest-garden.jpg') no-repeat center center;
+    background: linear-gradient(rgba(220, 130, 130, .7), rgba(220, 130, 130, .7)), url('../img/recipeSuggestionLanding.jpg') no-repeat center center;
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -35,7 +35,7 @@
 }
 
 .preview2 {
-    background: linear-gradient(rgba(105, 80, 101, .7), rgba(105, 80, 101, .7)), url('http://blueheatingandcooling.com/wp-content/uploads/2016/01/local-search-map-pin-ss-1920.jpg') no-repeat;
+    background: linear-gradient(rgba(105, 80, 101, .7), rgba(105, 80, 101, .7)), url('../img/mapLanding.jpg') no-repeat;
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -49,7 +49,7 @@
 }
 
 .preview3 {
-    background: linear-gradient(rgba(63, 91, 103, .7), rgba(63, 91, 103, .7)), url('https://static.pexels.com/photos/89267/pexels-photo-89267.jpeg') no-repeat center center;
+    background: linear-gradient(rgba(63, 91, 103, .7), rgba(63, 91, 103, .7)), url('../img/farmLanding.jpeg') no-repeat center center;
     background-size: cover;
     height: 100%;
     width: 100%;
