@@ -1,7 +1,4 @@
-
-
     <link href="{{ asset('css/stand.css') }}" rel="stylesheet">
-
 
 <div class="container">
     <table hidden>
@@ -21,6 +18,6 @@
     </div>
 </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7EtFbAhBZWZMCI_9OaOpLNPkjVRcKlGU" async defer></script>
      <script src="{{ asset('js/stand.js') }}"></script>

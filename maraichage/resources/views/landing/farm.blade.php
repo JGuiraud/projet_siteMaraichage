@@ -19,5 +19,5 @@
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
+<script src="{{ asset('js/instafeed.min.js') }}"></script>
 <script src="{{ asset('js/farm.js') }}"></script>

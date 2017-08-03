@@ -1,5 +1,9 @@
 @extends('layouts.app')
+@section('css')
 
+    <link href="{{ asset('css/basket.css') }}" rel="stylesheet">
+
+@endsection
 @section('content')
 <div class="container">
 	<div class="row">
@@ -96,8 +100,3 @@
 @endsection
 
 
-@section('css')
-
-    <link href="{{ asset('css/basket.css') }}" rel="stylesheet">
-
-@endsection

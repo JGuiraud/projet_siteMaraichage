@@ -1,9 +1,5 @@
 @extends('layouts.landingPage')
 
-@section('css')
-        {{--  <link href="{{ asset('css/admin.css') }}" rel="stylesheet">  --}}
-
-@endsection
 @section('content')
     <div class="contentLanding">
 
@@ -45,9 +41,4 @@
     </div>
   </section>
 </div>
-@endsection
-@section('js')
-     {{--  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7EtFbAhBZWZMCI_9OaOpLNPkjVRcKlGU" async defer></script>  --}}
-    {{--  <script src="{{ asset('js/stand.js') }}"></script>  --}}
-
 @endsection

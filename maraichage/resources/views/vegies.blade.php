@@ -1,4 +1,11 @@
 @extends('layouts.app')
+@section('css')
+<style>
+i:hover {
+	cursor: pointer;
+}
+</style>
+@endsection
 
 @section('content')
 <div class="container">
@@ -145,18 +152,7 @@
 @endsection
 
 @section('js')
-
     <script src="{{ asset('js/vegies.js') }}"></script>
-
-
 @endsection
 
-@section('css')
-<style>
-i:hover {
-	cursor: pointer;
-}
 
-</style>
-
-@endsection

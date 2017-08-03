@@ -10,8 +10,6 @@
                 <a href="/admin" class="btn btn-danger annulerRecette">Annuler et retour menu</a>
             </div>
 
-
-
         <br>
             <div class="panel panel-default">
 
