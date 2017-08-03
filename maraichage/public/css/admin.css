@@ -1,113 +1,123 @@
-/*.adminpanel {
+        /*.adminpanel {
     display: flex;
     flex-flow: wrap;
     height: 70vh;
 }*/
 
-.adminpanel {
-    height: 40vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background: none;
-    /*width: 40vh;*/
-}
+        .adminpanel {
+            height: 40vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background: none;
+            /*width: 40vh;*/
+        }
 
-.containerAdmin {
-    /*margin-top: 10vh;*/
-    padding-left: 33vw;
-    padding-right: 33vw;
-    height: 85vh;
-}
+        .containerAdmin {
+            display: flex;
+            /*margin-top: 10vh;*/
+            /* padding-left: 33vw;
+            padding-right: 33vw; */
+            align-items: center;
+            width: 25%;
+            height: 85vh;
+        }
 
-.panel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
-    border: none;
-    background: none;
-    box-shadow: none;
-}
+        .panel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+        }
 
-.panel-body {
-    padding: 0;
-    border: 0;
-}
+        .panel-body {
+            padding: 0;
+            border: 0;
+        }
 
-.eye {
-    color: #455a64;
-}
+        .eye {
+            color: #455a64;
+        }
 
-.action{
-    /*flex-grow: 1;*/
-    width: 100%;
-    background: #455a64;
-    height: 25%;
-    border: 2px #F5F8FA solid;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-}
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+        }
 
-.action:hover {
-    cursor: pointer;
-    transition: all 0.5s;
-    background: #546e7a;
-}
+        .action {
+            /*flex-grow: 1;*/
+            width: 100%;
+            background: #455a64;
+            height: 25%;
+            border: 2px #F5F8FA solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
 
-.action>.textmenu span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
+        .action:hover {
+            cursor: pointer;
+            transition: all 0.5s;
+            background: #546e7a;
+        }
 
-.action>.textmenu span:after {
-    content: ">>";
-    position: absolute;
-    opacity: 0;
-    top: -7px;
-    right: -100px;
-    transition: 0.5s;
-}
+        .action>.textmenu span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
 
-.textmenu>span:after {
-    font-size: 20px;
-}
+        .action>.textmenu span:after {
+            content: ">>";
+            position: absolute;
+            opacity: 0;
+            top: -7px;
+            right: -100px;
+            transition: 0.5s;
+        }
 
-.action:hover span {
-  padding-right: 2px;
-}
+        .textmenu>span:after {
+            font-size: 20px;
+        }
 
-.action:hover span:after {
-  opacity: 1;
-  right: -30px;
-}
+        .action:hover span {
+            padding-right: 2px;
+        }
 
-a:hover {
-    color: white;
-}
+        .action:hover span:after {
+            opacity: 1;
+            right: -30px;
+        }
 
+        a:hover {
+            color: white;
+        }
 
-.textmenu {
-    width: 80%;
-    padding-left: 3vw;
-}
-.facontainer {
-    padding-left: 1vw;
-    width: 10%;
-}
+        .textmenu {
+            width: 80%;
+            padding-left: 3vw;
+        }
 
-@media (max-width: 767px) {
-    .containerAdmin {
-    /*margin-top: 10vh;*/
-    padding-left: 10vw;
-    padding-right:10vw;
-    height: 85vh;
-}
+        .facontainer {
+            padding-left: 1vw;
+            width: 10%;
+        }
 
-}
+        @media (max-width: 767px) {
+            .containerAdmin {
+                display: flex;
+                align-items: center;
+                width: 80%;
+                /*margin-top: 10vh;*/
+                /* padding-left: 10vw;
+                padding-right: 10vw; */
+                /* padding: 0; */
+                height: 85vh;
+            }
+        }

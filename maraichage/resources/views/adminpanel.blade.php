@@ -7,8 +7,8 @@
 <div class="container">
     <div class="row">
         <div class="containerAdmin">
-            <div class="panel panel-default">
-                <div class="panel-body adminpanel">
+            <div class="">
+                <div class="adminpanel">
                     <a href="/legumes" class="action">
                         <div class="facontainer"><i class="fa fa-leaf fa-2x" aria-hidden="true"></i>
                         </div>
