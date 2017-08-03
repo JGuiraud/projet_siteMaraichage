@@ -90,7 +90,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        /* justify-content: space-between; */
     }
     .animation {
         display: flex;
@@ -100,10 +99,8 @@
     }
     .animation>img {
         display: flex;
-        /* justify-content: center; */
         width: 90%;
         height: 90%;
-        /* padding: 1vh; */
         margin-bottom: 1vh;
         padding-bottom: 0;
     }

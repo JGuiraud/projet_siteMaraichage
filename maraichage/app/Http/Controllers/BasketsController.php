@@ -35,7 +35,8 @@ class BasketsController extends Controller
      */
     public function suggestRecipes(Request $request)
     {
-        function c($x){
+        function c($x)
+        {
             return count($x);
         }
         // Sort of basket in alphabetical order and with new keys associated
@@ -90,8 +91,7 @@ class BasketsController extends Controller
             ];
             if (c($matchingVegies) === c($recette) && c($nonMatchingVegies)<1) {
                 $bestOnes[] = $result;
-            // } else if (c($matchingVegies) === c($sortedBasketVegies)) {
-            } else if ((c($matchingVegies) === c($recette)-1 || c($matchingVegies) === c($recette)) && (c($recetteTemp) < 2 || c($nonMatchingVegies)<2)) {
+            } elseif ((c($matchingVegies) === c($recette)-1 || c($matchingVegies) === c($recette)) && (c($recetteTemp) < 2 || c($nonMatchingVegies)<2)) {
                 $goodOnes[] = $result;
             } else {
                 if (c($matchingVegies) > 0) {
