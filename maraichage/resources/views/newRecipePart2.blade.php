@@ -22,7 +22,7 @@
                         <div class="form-group">
                             <label class="control-label col-sm-2 required" for="title">Titre recette</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="title" name="title" placeholder="" value="Tomate à la tomate et au coulis de tomate" required>
+                                <input type="text" class="form-control" id="title" name="title" placeholder="" value="" required>
                             </div>
                         </div>
 
@@ -41,10 +41,10 @@
                                     <div>
                                         <input id="nbExtraingredients" type="text" name="nbExtraingredients" value="1" hidden>
                                         <div class="col-sm-5">
-                                            <input class="form-control" type="text" name="extraIngredient1" placeholder="ingrédient supplémentaire" value="petit pois">
+                                            <input class="form-control" type="text" name="extraIngredient1" placeholder="ingrédient supplémentaire" value="">
                                         </div>
                                         <div class="col-sm-5">
-                                            <input class="form-control" type="text" name="extraQuantity1" placeholder="Quantité" value="400gm">
+                                            <input class="form-control" type="text" name="extraQuantity1" placeholder="Quantité" value="">
                                         </div>
                                     </div>
                                 </div>
@@ -60,10 +60,7 @@
                             <label for="" class="control-label col-sm-2 required">Description</label>
                             <div class="form-group col-sm-10">
                                 <div class="col-sm-12">
-                                    <textarea name="description" class="form-control" id="description" rows="10" required>Illud tamen clausos vehementer angebat quod captis navigiis, quae frumenta vehebant per flumen, Isauri quidem alimentorum copiis adfluebant, ipsi vero solitarum rerum cibos iam consumendo inediae propinquantis aerumnas exitialis horrebant.
-
-Haec ubi latius fama vulgasset missaeque relationes adsiduae Gallum Caesarem permovissent, quoniam magister equitum longius ea tempestate distinebatur, iussus comes orientis Nebridius contractis undique militaribus copiis ad eximendam periculo civitatem amplam et oportunam studio properabat ingenti, quo cognito abscessere latrones nulla re amplius memorabili gesta, dispersique ut solent avia montium petiere celsorum.
-Raptim igitur properantes ut motus sui rumores celeritate nimia praevenirent, vigore corporum ac levitate confisi per flexuosas semitas ad summitates collium tardius evadebant. et cum superatis difficultatibus arduis ad supercilia venissent fluvii Melanis alti et verticosi, qui pro muro tuetur accolas circumfusus, augente nocte adulta terrorem quievere paulisper lucem opperientes. arbitrabantur enim nullo inpediente transgressi inopino adcursu adposita quaeque vastare, sed in cassum labores pertulere gravissimos.
+                                    <textarea name="description" class="form-control" id="description" rows="10" required>
                                     </textarea>
                                  </div>
                             </div>
