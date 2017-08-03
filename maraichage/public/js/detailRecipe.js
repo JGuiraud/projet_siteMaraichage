@@ -1,22 +1,18 @@
-(function(){
-
-    console.log('coucou');
-
-
+(function() {
     $('#print').on('click', function() {
         window.print();
     })
 
-    $('.stock').on('click', function(){
+    $('.stock').on('click', function() {
         var name = $(this).attr('name');
-        $('#stockDisplay'+name).toggle();
+        $('#stockDisplay' + name).toggle();
     })
 
-    $('#modalCaller').on('click', function () {
+    $('#modalCaller').on('click', function() {
         $("#modal").modal();
     });
 
-    $('#modalSubmit').on('click', function(){
+    $('#modalSubmit').on('click', function() {
         $('#modalform').submit();
     });
 

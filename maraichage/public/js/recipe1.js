@@ -1,24 +1,22 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
-    $('.fa-trash').on('click', function () {
+    $('.fa-trash').on('click', function() {
         localStorage.clear();
         location.reload();
-        // console.log('clear');
     });
 
-    $('#validateBasket').on('click', function () {
+    $('#validateBasket').on('click', function() {
         $('#formBasket').submit();
     });
 
     function displayBasket(tab) {
         $('#basketReceiver').html('');
-        tab.forEach(function (a) {
+        tab.forEach(function(a) {
             $('#basketReceiver').append('<span id="' + a + '"><span class="removefromBasket fa fa-times"> </span> ' + a + '</span><span>, ');
         });
-        $('.removefromBasket').each(function () {
-            $(this).on('click', function () {
+        $('.removefromBasket').each(function() {
+            $(this).on('click', function() {
                 var name = $(this).parent().attr('id');
-                console.log(name);
                 if (vegiesInBasketForRecipe.includes(name)) {
                     vegiesInBasketForRecipe.splice(vegiesInBasketForRecipe.indexOf(name), 1);
                 }
@@ -37,7 +35,7 @@ $(document).ready(function () {
         localStorage.setItem('vegiesInBasketForRecipe', JSON.stringify(vegiesInBasketForRecipe));
     }
 
-    $('.vegie').on('click', function () {
+    $('.vegie').on('click', function() {
         var name = $(this).attr('name');
         if (vegiesInBasketForRecipe.includes(name)) {
             vegiesInBasketForRecipe.splice(vegiesInBasketForRecipe.indexOf(name), 1);
@@ -51,18 +49,19 @@ $(document).ready(function () {
     });
 
     function checkLight() {
-        $('.vegie').each(function () {
+        $('.vegie').each(function() {
             if (vegiesInBasketForRecipe.includes($(this).attr('name'))) {
                 $(this).attr('class', 'vegie btn btn-success');
             } else {
                 $(this).attr('class', 'vegie btn btn-secondary');
             }
         });
-    } checkLight();
+    }
+    checkLight();
 
     function checkedSeasons() {
         var checked_seasons = [];
-        $('.checkbox-inline').each(function () {
+        $('.checkbox-inline').each(function() {
             if ($(this).children().is(':checked')) {
                 checked_seasons.push('1');
             } else {
@@ -75,7 +74,7 @@ $(document).ready(function () {
     function MEGAFILTER() {
         var tab = [];
         var checked_seasons = checkedSeasons();
-        $('.vegie').each(function () {
+        $('.vegie').each(function() {
             var seasonTableVegieClicked = [];
             var compare = [];
             var t = $(this);
@@ -94,10 +93,8 @@ $(document).ready(function () {
         return tab;
     }
 
-    $('#searchVegie').on('keyup', function () {
-        $('.vegie').each(function () {
-            console.log($(this).attr('name').toLowerCase())
-            console.log(MEGAFILTER());
+    $('#searchVegie').on('keyup', function() {
+        $('.vegie').each(function() {
             if (MEGAFILTER().includes($(this).attr('name').toLowerCase())) {
                 $(this).show();
             } else {
@@ -107,8 +104,8 @@ $(document).ready(function () {
     });
 
 
-    $(':checkbox').on('click', function () {
-        $('.vegie').each(function () {
+    $(':checkbox').on('click', function() {
+        $('.vegie').each(function() {
             if (MEGAFILTER().includes($(this).attr('name').toLowerCase())) {
                 $(this).show();
             } else {
