@@ -172,14 +172,16 @@ class RecipesController extends Controller
     public function showCase(Request $request, $id)
     {
         // dd($request);
-        if($frontRecipe = Recipe::all()->where('front_view', '=', '1')->first()){
+        if ($frontRecipe = Recipe::all()->where('front_view', '=', '1')->first()) {
             $frontRecipe->front_view = '0';
             $frontRecipe->update();
         }
 
         $idRecipe = Recipe::all()->where('id', '=', $id)->first();
-        $idRecipe->comment = $request->input('textBox');
-        // $idRecipe->comment = 'coucou';
+
+        $commentRecipe = $request->input('textBox');
+        $output = preg_replace("/\r\n|\r|\n/", '<br/>', $commentRecipe);
+        $idRecipe->comment = $output;
 
         $idRecipe->front_view = 1;
         $idRecipe->update();
