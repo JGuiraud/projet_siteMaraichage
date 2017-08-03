@@ -79,7 +79,9 @@ textarea {
             <div class="modal-body">
                 <form method="POST" id="modalform" action='/miseEnAvant/recette/{{ $id }}' >
                     {{ csrf_field() }}
-                    <textarea name="textBox" id="textBox"></textarea>
+                    <div class="col-sm-12">
+                        <textarea name="textBox" id="textBox" class="form-control"></textarea>
+                    </div>
                 </form>
                 <p>Si aucun commentaire n'est ajouté la box n'apparaîtra pas.</p>
             </div>

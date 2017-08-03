@@ -20,6 +20,7 @@
             <div class="title_preparation">préparation</div>
             <p>{!! $recipe_text !!}</p>
         </div>
+        @if($comment_recipe)
         <div class="commentaire_recipe">
             <div class="title_comment"><i class="fa fa-info" aria-hidden="true"></i> Le mot du Maraîcher</div>
             <div class="comment_recipe">
@@ -27,5 +28,6 @@
                 <br>
             </div>
         </div>
+        @endif
     </div>
 </div>
