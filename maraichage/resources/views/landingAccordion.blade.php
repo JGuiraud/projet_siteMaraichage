@@ -1,9 +1,6 @@
 @extends('layouts.landingPage')
 
-@section('css')
-         {{--  <link href="{{ asset('css/admin.css') }}" rel="stylesheet">   --}}
 
-@endsection
 @section('content')
     <div class="contentLanding">
 
