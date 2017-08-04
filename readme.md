@@ -18,7 +18,7 @@ The website has two sections (front and admin views).
 ## Installation
 
 After having cloned/forked/downloaded the project:
-- Create and setup a databse
+- Create and setup a database
 - Duplicate the .env.example file and rename it to .env
 - Customise : DB_DATABASE | DB_USERNAME | DB_PASSWORD
 - Run :<br />
