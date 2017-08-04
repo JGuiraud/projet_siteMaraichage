@@ -21,7 +21,7 @@ After having cloned/forked/downloaded the project:
 - Create and setup a databse
 - Duplicate the .env.example file and rename it to .env
 - Customise : DB_DATABASE | DB_USERNAME | DB_PASSWORD
-- Run :
+- Run :<br />
     ```composer install```<br />
     ```php artisan key:generate```<br />
     ```php artisan migrate```<br />
