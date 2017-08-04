@@ -171,7 +171,6 @@ class RecipesController extends Controller
 
     public function showCase(Request $request, $id)
     {
-        // dd($request);
         if ($frontRecipe = Recipe::all()->where('front_view', '=', '1')->first()) {
             $frontRecipe->front_view = '0';
             $frontRecipe->update();
@@ -201,12 +200,6 @@ class RecipesController extends Controller
     public function getRecipes(Request $request)
     {
         $recipes = Recipe::All();
-        // dd($recipes);
-        // $allRecipes = [];
-        // foreach ($recipes as $recipe) {
-        //     $allRecipes = $recipe['attributes'];
-        // }
-        // dd($allRecipes);
         return view('listRecipes', compact('recipes'));
     }
 }

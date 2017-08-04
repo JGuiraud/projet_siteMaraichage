@@ -1,27 +1,27 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     var id = [];
-    $('.market_id').each(function(i) {
+    $('.market_id').each(function (i) {
         id.push(($(this).text()));
     });
     var city = [];
-    $('.market_city').each(function(i) {
+    $('.market_city').each(function (i) {
         city.push(($(this).text()));
     });
 
     // load all markets points register
     var latitude = [];
     var longitude = [];
-    $('.market_latitude').each(function(i) {
+    $('.market_latitude').each(function (i) {
         latitude.push(($(this).text()));
     });
-    $('.market_longitude').each(function(i) {
+    $('.market_longitude').each(function (i) {
         longitude.push(($(this).text()));
     });
 
     // load all markets details register
     var details = [];
-    $('.market_details').each(function(i) {
+    $('.market_details').each(function (i) {
         details.push(($(this).text()));
     });
 
@@ -30,7 +30,7 @@ $(document).ready(function() {
         url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + city + "&lang=fr&key=AIzaSyD7EtFbAhBZWZMCI_9OaOpLNPkjVRcKlGU",
         dataType: "json",
         success: geolocation,
-        error: function() {
+        error: function () {
             alert("404 Not Found - Oops something went wrong !");
         }
     });
@@ -77,7 +77,7 @@ $(document).ready(function() {
         });
 
         // create all markets markers and details with infowindow
-        $(id).each(function(i) {
+        $(id).each(function (i) {
             var markets_LatLng = {
                 lat: parseFloat(latitude[i]),
                 lng: parseFloat(longitude[i])
@@ -117,22 +117,22 @@ $(document).ready(function() {
                     maxWidth: 300
                 });
             }
-            markers_markets.addListener('click', function() {
-                if (typeof(window.infoopened) != 'undefined') {
+            markers_markets.addListener('click', function () {
+                if (typeof (window.infoopened) != 'undefined') {
                     infoopened.close();
                 }
                 markets_details.open(map, this);
                 infoopened = markets_details;
             });
-            map.addListener('click', function() {
-                if (typeof(window.infoopened) != 'undefined') {
+            map.addListener('click', function () {
+                if (typeof (window.infoopened) != 'undefined') {
                     infoopened.close();
                 }
             });
         });
 
         // resize map screen
-        setInterval(function() {
+        setInterval(function () {
             google.maps.event.trigger(map, "resize");
         }, 1000);
     }

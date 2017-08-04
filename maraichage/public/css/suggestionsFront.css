@@ -1,12 +1,10 @@
     .suggestionPage {
         height: 100%;
-        /* background: coral; */
     }
 
     .recipe {
         height: auto;
         width: auto;
-        /* background: rgba(129, 38, 29, .3); */
         padding: 0 0em 4em 0em;
     }
 
@@ -36,9 +34,6 @@
     .title_recipe {
         font-size: 3em;
         font-weight: bold;
-        /* margin-top: 1em; */
-        /* margin-top: 1em; */
-        /* margin-bottom: 1em; */
         text-align: center;
     }
 
@@ -47,9 +42,6 @@
         text-align: center;
         width: 100%;
     }
-    /* .ingredients {
-        height: 100%;
-    } */
 
     .extra_ingredients {
         margin-top: 1em;

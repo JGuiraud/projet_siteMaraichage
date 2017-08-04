@@ -64,6 +64,10 @@
     width: 50%;
 }
 
+.minifooterLeft>u>a {
+    color: white;
+}
+
 .minifooterRight {
     text-align: left;
     padding: 0;
